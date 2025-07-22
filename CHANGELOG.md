@@ -26,7 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.1] - 2025-07-22
 
 ### Added
-- Initial project setup for Name Voting Tool
+- Initial project setup for role-based development framework
 - Basic project foundation and Git repository initialization
 
 [0.1.0]: https://github.com/username/1000-AI-Roles/compare/v0.0.1...v0.1.0

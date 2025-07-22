@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a Name Voting Tool project that uses a collaborative development approach with defined roles and workflows. The project follows clean architecture principles with modular design.
+This is a role-based development framework that uses a collaborative development approach with defined roles and workflows. The project follows clean architecture principles with modular design.
 
 ## Evidence-Based Development for AI-Human Technical Teams
 
@@ -198,7 +198,6 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 | Name | Summary | Version | Last Update |
 |------|---------|---------|-------------|
 | CLAUDE.md | Guidance file for Claude Code with project workflow, roles, standards, and development practices | 1.1 | 2025-07-22 |
-| project-goals.md | Foundation Name Suggestion & Voting System design specification with technical architecture, user journeys, and implementation timeline | 1.0 | 2025-07-22 |
 | AI-Roles.md | Complete role-based development system with Logic Designer, TDD Evidence Specialist, and Coder workflow | 1.0 | 2025-07-22 |
 | AI-Roles-Claude-Agents.md | Claude Code agent definitions with invocation patterns, custom instructions, and workflow evaluations | 1.0 | 2025-07-22 |
 | README.md | Project overview with role calling guide and research findings about @role pattern implementation in Claude Code | 1.0 | 2025-07-22 |
