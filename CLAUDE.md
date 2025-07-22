@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a role-based development framework that uses a collaborative development approach with defined roles and workflows. The project follows clean architecture principles with modular design.
+This is the Claude Code Pair Programming Roles framework - a role-based development system that uses specialized AI agents and evidence-based workflows for collaborative development. The project follows clean architecture principles with modular design.
 
 ## Evidence-Based Development for AI-Human Technical Teams
 

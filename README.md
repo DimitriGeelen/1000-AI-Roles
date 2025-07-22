@@ -1,7 +1,8 @@
-# 1000 AI Roles - 
+# Claude Code Pair Programming Roles
 
-A collaborative development project using evidence-based development principles and role-based AI workflows. This project demonstrates a systematic approach to building software using specialized AI agents for different aspects of development.
-Basically this is to stop me swearing to a computer, hopefully at least improve the odds of this not happening and me getting usable results ovber a longer period of time from AI paiprogarming
+A role-based development framework using evidence-based development principles and specialized AI workflows. This project demonstrates a systematic approach to building software using specialized AI agents for different aspects of development.
+
+This framework is designed to improve AI-human pair programming outcomes by providing structured, evidence-based workflows that reduce frustration and increase productivity through clear role definitions and measurable results.
 
 
 
