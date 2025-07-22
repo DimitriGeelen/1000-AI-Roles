@@ -47,7 +47,7 @@ This project uses a role-based development approach with the following key roles
 **Role Invocation Options**: 
 
 **Slash Commands (Recommended)**: Native Claude Code support via `.claude/commands/` directory
-- Individual roles: `/requirements-collector`, `/mvp-specialist`, `/architect`, `/planner`, `/pseudo-coder`, `/tdd-evidence-specialist`, `/coder`, `/documentation-writer`, `/git-mate`
+- Individual roles: `/project-initiator`, `/requirements-collector`, `/mvp-specialist`, `/architect`, `/planner`, `/pseudo-coder`, `/tdd-evidence-specialist`, `/coder`, `/documentation-writer`, `/git-mate`
 - List all roles: `/roles` - displays all available development roles with descriptions and usage instructions
 
 **Natural Language (Fallback)**: Claude recognizes role requests through conversational language
@@ -60,6 +60,13 @@ This project uses a role-based development approach with the following key roles
 - "With requirements complete, let's use the mvp specialist role"
 
 ### Foundation Agents
+
+**Project Initiator** (`/project-initiator`): Project Discovery Specialist
+- Transform vague ideas into actionable project briefs through interactive Q&A
+- Use structured discovery process: Problem → Validation → Constraints → Vision
+- Create `project-brief.md` with problem statement, success criteria, and scope
+- Output: Complete project brief ready for requirements gathering
+- WORKFLOW EVALUATION: Evaluate if additions or changes to project initiation workflows should be added to AI-Roles.md
 
 **Requirements Collector** (`/requirements-collector`): Requirements Collection Specialist
 - Gather comprehensive, clear, and actionable requirements through structured stakeholder interaction

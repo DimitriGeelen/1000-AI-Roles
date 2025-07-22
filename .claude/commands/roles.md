@@ -4,6 +4,12 @@ List all available development roles with descriptions and usage information.
 
 ## Foundation Agents
 
+**`/project-initiator`** - Project Discovery Specialist
+- Transforms vague ideas into actionable project briefs through interactive Q&A
+- Helps crystallize problems, validate worth solving, and define success criteria
+- Maps constraints (technical, time, budget) and identifies key stakeholders
+- **Output**: `project-brief.md` with problem statement and project scope
+
 **`/requirements-collector`** - Requirements Collection Specialist
 - Gathers comprehensive, clear, and actionable requirements through stakeholder interaction
 - Uses structured yet conversational approach with proactive questioning
@@ -64,8 +70,9 @@ List all available development roles with descriptions and usage information.
 
 ## Agent Chain Recommendations
 
+- **Just an idea**: `/project-initiator` → `/requirements-collector` → `/mvp-specialist` → `/architect` → `/planner`
 - **New project**: `/requirements-collector` → `/mvp-specialist` → `/architect` → `/planner`
-- **Basic Version**: `/requirements-collector` → `/mvp-specialist` (target: Basic Version) → `/pseudo-coder` → `/coder`
+- **Basic Version**: `/project-initiator` → `/mvp-specialist` (target: Basic Version) → `/pseudo-coder` → `/coder`
 - **MVP Development**: `/requirements-collector` → `/mvp-specialist` → `/architect` → `/planner` → `/pseudo-coder` → `/tdd-evidence-specialist` → `/coder`
 - **Have requirements**: `/pseudo-coder` → `/tdd-evidence-specialist` → `/coder`
 - **Code ready**: `/git-mate`
