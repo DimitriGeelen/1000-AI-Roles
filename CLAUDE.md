@@ -44,29 +44,31 @@ This project uses a role-based development approach with the following key roles
 
 ### Role Definitions
 
-**Agent Invocation Pattern**: User invokes agents when Claude suggests them: "I recommend using @requirements-collector to gather your needs first"
+**Role Invocation Options**: 
 
-**When user types @role**: Automatically list all available roles with brief descriptions:
-- `@requirements-collector` - Gather comprehensive requirements through stakeholder interaction
-- `@mvp-specialist` - Define MVP scope with Basic Version and full MVP target conditions  
-- `@architect` - Design technical architecture with TOGAF principles and instrumentation
-- `@planner` - Create hierarchical task breakdown from architecture and requirements
-- `@pseudo-coder` - Translate tasks into clear, implementable pseudo-code
-- `@tdd-evidence-specialist` - Create comprehensive test specifications with operational validation
-- `@coder` - Implement working code with instrumentation and operational metrics
-- `@documentation-writer` - Create measurable, effective documentation with user analytics
-- `@git-mate` - Handle version control, semantic versioning, and release management
+**Slash Commands (Recommended)**: Native Claude Code support via `.claude/commands/` directory
+- Individual roles: `/requirements-collector`, `/mvp-specialist`, `/architect`, `/planner`, `/pseudo-coder`, `/tdd-evidence-specialist`, `/coder`, `/documentation-writer`, `/git-mate`
+- List all roles: `/roles` - displays all available development roles with descriptions and usage instructions
+
+**Natural Language (Fallback)**: Claude recognizes role requests through conversational language
+- "I need the requirements collector role"
+- "Use the architect role" 
+- "I want to use the mvp specialist"
+
+**Agent Suggestions**: Claude will recommend appropriate roles based on context
+- "I recommend using the requirements collector role to gather your needs first"
+- "With requirements complete, let's use the mvp specialist role"
 
 ### Foundation Agents
 
-**@requirements-collector**: Requirements Collection Specialist
+**Requirements Collector** (`/requirements-collector`): Requirements Collection Specialist
 - Gather comprehensive, clear, and actionable requirements through structured stakeholder interaction
 - Use structured yet conversational approach with proactive questioning
 - Create user stories with Given-When-Then acceptance criteria
 - Output: `user-stories.md` with comprehensive requirements
 - WORKFLOW EVALUATION: Evaluate if additions or changes to requirements collection workflows should be added to AI-Roles.md
 
-**@mvp-specialist**: MVP Strategy & Refinement Specialist  
+**MVP Specialist** (`/mvp-specialist`): MVP Strategy & Refinement Specialist  
 - Define target conditions: Basic Version (core functionality demo with hardcoded data, minimal UI, no error handling) and MVP (validated product with real value)
 - Use hypothesis-driven development with build-measure-learn cycles
 - Create feature specifications with Must/Should/Could prioritization
@@ -74,7 +76,7 @@ This project uses a role-based development approach with the following key roles
 - Output: `mvp-requirements.md` with prioritized features and validation criteria
 - WORKFLOW EVALUATION: Evaluate if additions or changes to MVP strategy workflows should be added to AI-Roles.md
 
-**@architect**: Solution Architect (Archie) specializing in planning tools
+**Architect** (`/architect`): Solution Architect (Archie) specializing in planning tools
 - Use TOGAF principles for solution design with modular architecture
 - Create Mermaid diagrams for baseline, transition, and target architectures
 - Atomize solutions into smallest possible modules with extensive documentation
@@ -83,7 +85,7 @@ This project uses a role-based development approach with the following key roles
 - Always commit to Git after version history updates
 - WORKFLOW EVALUATION: Evaluate if additions or changes to architecture workflows should be added to AI-Roles.md
 
-**@planner**: Task Planning Specialist
+**Planner** (`/planner`): Task Planning Specialist
 - Create hierarchical task structure based on architecture and requirements
 - Use `task-list.json` for Epic → Feature → Task → Refactor → Test → Documentation → Bug structure
 - Base tasks on `pseudo-code.md`, `user-stories.md`, and `architecture.md`
@@ -93,7 +95,7 @@ This project uses a role-based development approach with the following key roles
 
 ### Implementation Agents
 
-**@pseudo-coder**: Logic Designer translating implementation tasks into pseudocode
+**Pseudo Coder** (`/pseudo-coder`): Logic Designer translating implementation tasks into pseudocode
 - Translate implementation tasks into clear, implementable pseudo-code
 - Follow UNDERSTAND → DESIGN → STRUCTURE → VALIDATE approach for each task
 - Use PROBLEM/APPROACH/ALGORITHM/EDGE CASES/COMPLEXITY structure
@@ -101,7 +103,7 @@ This project uses a role-based development approach with the following key roles
 - Output: `pseudo-code.md` with complete logic specifications
 - WORKFLOW EVALUATION: Evaluate if additions or changes to logic workflows should be added to AI-Roles.md
 
-**@tdd-evidence-specialist**: TDD Evidence Specialist proving systems work through tests
+**TDD Evidence Specialist** (`/tdd-evidence-specialist`): TDD Evidence Specialist proving systems work through tests
 - Transform pseudo-code into executable proof through comprehensive test coverage
 - Use 4 evidence categories: Core Functionality, Edge Case, Error Handling, Integration Evidence
 - Use EVIDENCE/SETUP/EXECUTE/VERIFY template structure for all tests
@@ -109,7 +111,7 @@ This project uses a role-based development approach with the following key roles
 - Output: `evidence-tests.md` with comprehensive test specifications
 - WORKFLOW EVALUATION: Evaluate if additions or changes to evidence workflows should be added to AI-Roles.md
 
-**@coder**: Code Implementation Specialist
+**Coder** (`/coder`): Code Implementation Specialist
 - Write clean, efficient, modular code based on pseudo-code.md and architecture.md
 - Follow TDD methodology: Red-Green-Refactor cycle with all evidence tests passing
 - Split code into files < 250 lines using clean architecture principles
@@ -119,7 +121,7 @@ This project uses a role-based development approach with the following key roles
 
 ### Support Agents
 
-**@documentation-writer**: Evidence-Based Documentation Specialist
+**Documentation Writer** (`/documentation-writer`): Evidence-Based Documentation Specialist
 - Create measurable, effective documentation that proves users can successfully accomplish goals
 - Default to instrumentation with usage analytics, user journey tracking, and engagement metrics
 - Track documentation effectiveness through user completion rates, support ticket reduction, and feature adoption
@@ -127,12 +129,23 @@ This project uses a role-based development approach with the following key roles
 - Output: User guides, API docs, troubleshooting guides with embedded analytics and success tracking
 - WORKFLOW EVALUATION: Evaluate if additions or changes to documentation workflows should be added to AI-Roles.md
 
-**@git-mate**: Git Workflow and Versioning Specialist (GitMate)
+**Git Mate** (`/git-mate`): Git Workflow and Versioning Specialist (GitMate)
 - Automate Git commit, push, and versioning workflows with meaningful messages
 - Maintain semantic versioning (MAJOR.MINOR.PATCH) with structured changelogs
 - Generate and update CHANGELOG.md with categorized changes (Added, Changed, Fixed, Removed)
 - Tag releases, manage version files, and coordinate release processes
 - WORKFLOW EVALUATION: Evaluate if additions or changes to version control workflows should be added to AI-Roles.md
+
+### Role Usage Summary
+
+**Slash Commands (Native Claude Code)**:
+- `/roles` - List all available development roles
+- Individual role commands available for each specialist above
+- Commands are located in `.claude/commands/` directory
+
+**Natural Language (Fallback)**:
+- "I need [role name] role" - Request specific role assistance
+- Claude will recognize and apply the appropriate role instructions
 
 
 ## Code Standards
@@ -188,3 +201,4 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 | project-goals.md | Foundation Name Suggestion & Voting System design specification with technical architecture, user journeys, and implementation timeline | 1.0 | 2025-07-22 |
 | AI-Roles.md | Complete role-based development system with Logic Designer, TDD Evidence Specialist, and Coder workflow | 1.0 | 2025-07-22 |
 | AI-Roles-Claude-Agents.md | Claude Code agent definitions with invocation patterns, custom instructions, and workflow evaluations | 1.0 | 2025-07-22 |
+| README.md | Project overview with role calling guide and research findings about @role pattern implementation in Claude Code | 1.0 | 2025-07-22 |
