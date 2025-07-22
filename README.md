@@ -16,7 +16,7 @@ This framework is designed to improve AI-human pair programming outcomes by prov
 
 ## Role Calling in Claude Code
 
-This project implements a ole-based development system where specialized AI agents handle different aspects of software development. Each role has specific responsibilities, success metrics, and handoff procedures.
+This project implements a Role-based development system where specialized AI agents handle different aspects of software development. Each role has specific responsibilities, success metrics, and handoff procedures.
 
 ### How Role Calling Works
 
