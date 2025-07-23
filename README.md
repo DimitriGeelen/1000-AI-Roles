@@ -4,7 +4,9 @@ A role-based development framework using evidence-based development principles a
 
 This framework is designed to improve AI-human pair programming outcomes by providing structured, evidence-based workflows that reduce frustration and increase productivity through clear role definitions and measurable results.
 
-## How to start
+## How to start 1 ... 2 ... 3 steps
+
+**STEP 1 - clone Repo**
 
 **If you want the repository contents to go directly into your current directory (without creating a subfolder), you can use:**
 
@@ -25,6 +27,19 @@ This command does three things in sequence:
 3. `git clone ... .` - Clones the repository contents directly into the current directory (the dot at the end means "current directory")
 
 Replace `my-project` with whatever you want to name your project folder. The `&&` operators ensure each command only runs if the previous one succeeds.
+
+**STEP 2 - start claude code**
+
+by typing in claude at the command prompt 
+
+or
+
+if you need to install claude first follow the instructions here: https://docs.anthropic.com/en/docs/claude-code/setup
+**STEP 3**
+
+**'/' (forward slash) + 'ENTER' in the command prompt, you should now see the avialable roles. You can navigate with the arrow Up/down keys to the roles and then enter to step into the role.**
+**You can also type '/roles' + 'ENTER'--> will also show you the available roles or type in teh role directly by '/(RoleName) + 'ENTER'**
+**for a new project i suggest to start with the '/project-initiator' role but this is not a requirments**
 
 ## Evidence-Based Development Principles
 
