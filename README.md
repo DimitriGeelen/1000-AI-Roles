@@ -9,7 +9,7 @@ This framework is designed to improve AI-human pair programming outcomes by prov
 **If you want the repository contents to go directly into your current directory (without creating a subfolder), you can use:**
 
 ```bash
-git clone https://github.com/DimitriGeelen/1000-AI-Roles.git
+git clone https://github.com/DimitriGeelen/1000-AI-Roles.git .
 ```
 The . at the end tells git to clone into the current directory. Note that your current directory should be empty for this to work properly.
 
