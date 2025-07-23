@@ -4,7 +4,27 @@ A role-based development framework using evidence-based development principles a
 
 This framework is designed to improve AI-human pair programming outcomes by providing structured, evidence-based workflows that reduce frustration and increase productivity through clear role definitions and measurable results.
 
+## How to start
 
+**If you want the repository contents to go directly into your current directory (without creating a subfolder), you can use:**
+
+```bash
+git clone https://github.com/DimitriGeelen/1000-AI-Roles.git
+```
+The . at the end tells git to clone into the current directory. Note that your current directory should be empty for this to work properly.
+
+**If you want to create a new project folder and clone the repository into it:**
+
+```bash
+mkdir my-project && cd my-project && git clone https://github.com/DimitriGeelen/1000-AI-Roles.git .
+```
+
+This command does three things in sequence:
+1. `mkdir my-project` - Creates a new directory called "my-project"
+2. `cd my-project` - Changes into that directory
+3. `git clone ... .` - Clones the repository contents directly into the current directory (the dot at the end means "current directory")
+
+Replace `my-project` with whatever you want to name your project folder. The `&&` operators ensure each command only runs if the previous one succeeds.
 
 ## Evidence-Based Development Principles
 
