@@ -1,5 +1,7 @@
 # Claude Code Pair Programming Roles
 
+
+
 A role-based development framework using evidence-based development principles and specialized AI workflows. This project demonstrates a systematic approach to building software using specialized AI agents for different aspects of development.
 
 This framework is designed to improve AI-human pair programming outcomes by providing structured, evidence-based workflows that reduce frustration and increase productivity through clear role definitions and measurable results.
@@ -40,6 +42,15 @@ if you need to install claude first follow the instructions here: https://docs.a
 **'/' (forward slash) + 'ENTER' in the command prompt, you should now see the avialable roles. You can navigate with the arrow Up/down keys to the roles and then enter to step into the role.**
 **You can also type '/roles' + 'ENTER'--> will also show you the available roles or type in teh role directly by '/(RoleName) + 'ENTER'**
 **for a new project i suggest to start with the '/project-initiator' role but this is not a requirments**
+
+
+**p.s. some pointers to deal with quirkiness, aim to refine this a the next release.**
+
+For now, I suggest to skip the architect role unless you wan enterprise grade architecture.
+
+---Architecture bloat: when LLM veers of into architecture bloat use the phase: adhere to our claude.md! --> **Build the minimum first.** Start with the simplest version that could possibly work - strip everything down to just the essential core functionality!
+
+--- Cheating and Lying LLM: When the LLM is faking result and claiming features have been build and successfully tested, use the phrase: adhere to our claude.md! --> **"Show me the data" protocol.** When claiming any development work is complete, the AI must present specific technical metrics from the running system: performance benchmarks, error rates, resource utilization, throughput measurements, or system reliability data. Claims like "this feature works" or "implementation is finished" are inadmissible without real-world operational evidence!
 
 ## Evidence-Based Development Principles
 
