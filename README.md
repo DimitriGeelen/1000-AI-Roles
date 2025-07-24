@@ -1,8 +1,11 @@
+
+This is a personal project for me. I'm the typical example of someone who never got around to developing enough of a programming skillset so that I could actually create useful tools, but always wanted to have those skills because there are so many situations where a good tool would be helpful. Now with AI pair programming, making usable applications without having to spend a lot of time building the skillset first comes within reach for me.
+However, working with AI LLMs is quirky and difficult because they can completely derail. I'm trying different methods of "guiding," "coaching," "steering," and limiting the LLM. I've had some interesting experiments with RooCode and Cursor using AI roles. Recently I took another shot at it with Claude Code roles. I've packaged the work and put it on GitHub here: [GitHub link]
+This is not quite where I want it to be yet, but I do see this as one of the viable methods for keeping the LLM on track and it's a nice start. Feel encouraged to use it and I welcome feedback here or you can look me up on LinkedIn.
+
 # Claude Code Pair Programming Roles
 
-
-
-A role-based development framework using evidence-based development principles and specialized AI workflows. This project demonstrates a systematic approach to building software using specialized AI agents for different aspects of development.
+Is a role-based development framework using evidence-based development principles and specialized AI workflows. This project demonstrates a systematic approach to building software using specialized AI agents for different aspects of development.
 
 This framework is designed to improve AI-human pair programming outcomes by providing structured, evidence-based workflows that reduce frustration and increase productivity through clear role definitions and measurable results.
 
