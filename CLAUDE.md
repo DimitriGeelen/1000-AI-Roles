@@ -44,6 +44,60 @@ The goal is to build only what's been proven necessary, keeping development focu
 - 🎭 **Current Role**: [Role Name] - Brief role description
 - ➡️ **Next Suggested Role**: [Next Role] - Why this role follows naturally
 
+## Structured Interaction Pattern
+
+**IMPORTANT**: When any role needs to gather information through questions, follow this structured approach:
+
+### 1. Question Listing Phase
+First, present ALL questions as a numbered list with unique identifiers:
+```
+I need to gather some information. Here are all the questions I'll ask:
+
+Q1. [First question topic]
+Q2. [Second question topic]
+Q3. [Third question topic]
+...
+Qn. [Final question topic]
+
+Total questions: [n]
+Estimated time: [x] minutes
+```
+
+### 2. Iterative Questioning Phase
+Then guide the user through each question one-by-one:
+```
+Let's go through these questions together:
+
+[Q1 of n]: [Full detailed question]
+> [Wait for user response]
+
+[Q2 of n]: [Full detailed question]
+> [Wait for user response]
+```
+
+### 3. Progress Tracking
+- Always show current position: "[Q3 of 8]"
+- Allow users to skip: "Type 'skip' to move to next question"
+- Allow users to revisit: "Type 'back' to review previous question"
+- Provide context: Reference previous answers when relevant
+
+### 4. Summary Phase
+After all questions:
+```
+Thank you! Here's what I've gathered:
+- Q1: [Brief summary of answer]
+- Q2: [Brief summary of answer]
+...
+
+Would you like to revise any answers? (Enter question number or 'continue')
+```
+
+This pattern ensures users:
+- Know the full scope upfront
+- Can prepare for all questions
+- Experience a manageable, iterative process
+- Maintain control over the interaction
+
 ## Development Workflow
 
 This project uses a role-based development approach with the following key roles defined in `AI-Roles.md`. When asked to take on a specific role, follow the corresponding guidelines:
@@ -230,7 +284,9 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 
 | Name | Summary | Version | Last Update |
 |------|---------|---------|-------------|
-| CLAUDE.md | Guidance file for Claude Code with project workflow, roles, standards, and development practices | 1.1 | 2025-07-22 |
-| AI-Roles.md | Complete role-based development system with Logic Designer, TDD Evidence Specialist, and Coder workflow | 1.0 | 2025-07-22 |
-| AI-Roles-Claude-Agents.md | Claude Code agent definitions with invocation patterns, custom instructions, and workflow evaluations | 1.0 | 2025-07-22 |
-| README.md | Project overview with role calling guide and research findings about @role pattern implementation in Claude Code | 1.0 | 2025-07-22 |
+| CLAUDE.md | Guidance file for Claude Code with structured interaction pattern, role display, and development practices | 1.2 | 2025-07-26 |
+| AI-Roles.md | Complete role-based development system with all 10 roles and their workflows | 1.0 | 2025-07-22 |
+| README.md | Project overview with detailed setup instructions and troubleshooting guide | 1.1 | 2025-07-26 |
+| core-principles.md | Evidence-based development principles and MVP philosophy | 1.0 | 2025-07-22 |
+| CHANGELOG.md | Version history and release notes for the project | 0.2.0 | 2025-07-26 |
+| VERSION | Current version number of the project | 0.2.0 | 2025-07-26 |
