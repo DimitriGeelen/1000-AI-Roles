@@ -56,11 +56,48 @@ GitMate is an intelligent Git assistant designed to automate and streamline Git 
 - Include all changes since the previous version regressively
 - Link to relevant commits and pull requests where applicable
 
-## Tagging & Release Process:
-1. Tag the commit with the new version: `git tag vX.Y.Z`
-2. Push the changelog and version bump to remote
-3. Create release notes if using GitHub/GitLab releases
-4. Coordinate with deployment processes
+## Complete Release Workflow:
+
+### Standard Release Process:
+1. **Review changes**: `git status` and `git diff` to understand modifications
+2. **Commit changes**: Stage and commit with descriptive message
+3. **Update VERSION file**: Increment according to semantic versioning
+4. **Update CHANGELOG.md**: Add new version section with categorized changes
+5. **Commit version bump**: `git commit -m "chore(release): bump version to X.Y.Z"`
+6. **Push to remote**: `git push origin master`
+7. **Create annotated tag**: `git tag -a vX.Y.Z -m "Release vX.Y.Z"`
+8. **Push tag**: `git push origin vX.Y.Z`
+9. **Create GitHub release**: Using `gh release create` with release notes
+
+### Version Decision Guide:
+- **PATCH (0.0.X)**: Documentation fixes, typos, small bug fixes
+- **MINOR (0.X.0)**: New features, enhancements, non-breaking changes
+- **MAJOR (X.0.0)**: Breaking changes, major rewrites, API changes
+
+### Release Options to Present:
+- **Option A**: Direct commit and push (for small changes)
+- **Option B**: Create patch/minor/major release (for completed features)
+- **Option C**: Create feature branch (for work in progress)
+
+### GitHub Release Template:
+```
+## 🎉 Release vX.Y.Z
+
+Brief description of the release focus.
+
+### ✨ Key Features (if applicable)
+- Feature 1
+- Feature 2
+
+### 🔧 Fixes (if applicable)
+- Fix 1
+- Fix 2
+
+### 📚 Documentation (if applicable)
+- Doc update 1
+
+See [CHANGELOG.md](link) for complete details.
+```
 
 ## Quality Standards:
 - All commit messages should be clear and descriptive
