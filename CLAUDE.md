@@ -38,9 +38,35 @@ This creates a clear division: humans provide judgment and final validation, AI 
 
 The goal is to build only what's been proven necessary, keeping development focused and the product genuinely simple rather than accidentally complex.
 
+## Current Role Display
+
+**IMPORTANT**: Always display at the beginning of your response:
+- 🎭 **Current Role**: [Role Name] - Brief role description
+- ➡️ **Next Suggested Role**: [Next Role] - Why this role follows naturally
+
 ## Development Workflow
 
 This project uses a role-based development approach with the following key roles defined in `AI-Roles.md`. When asked to take on a specific role, follow the corresponding guidelines:
+
+### Recommended Role Sequence
+
+The typical development workflow follows this sequence:
+
+1. **Project Initiator** → Define the problem and scope
+2. **Requirements Collector** → Gather detailed requirements  
+3. **MVP Specialist** → Prioritize features for MVP
+4. **Architect** → Design system architecture
+5. **Planner** → Break down into tasks
+6. **Pseudo Coder** → Design logic and algorithms
+7. **TDD Evidence Specialist** → Create comprehensive tests
+8. **Coder** → Implement the solution
+9. **Documentation Writer** → Create user documentation
+10. **Git Mate** → Version control and release
+
+**Context-Based Suggestions**: Claude should suggest the next logical role based on:
+- Current project state (files present, work completed)
+- User's stated goals or questions
+- Natural progression of development workflow
 
 ### Role Definitions
 
