@@ -98,7 +98,7 @@ During development of this role-based system, we researched Claude Code's native
 This project now implements **both approaches**:
 
 **Slash Commands (Recommended)**:
-- Individual role commands: `/requirements-collector`, `/mvp-specialist`, `/architect`, etc.
+- Individual role commands: `/project-initiator`, `/requirements-collector`, `/mvp-specialist`, `/architect`, etc.
 - Role listing command: `/roles` to see all available roles
 - Located in `.claude/commands/` directory for native Claude Code support
 
@@ -121,11 +121,12 @@ This hybrid approach maintains the sophisticated role-based development system w
 
 1. **Clone the repository** - The `.claude/commands/` directory contains all role definitions
 2. **List available roles**: Type `/roles` to see all available development roles
-3. **Initialize with requirements**: Use `/requirements-collector` to gather comprehensive needs
-4. **Define MVP scope**: Use `/mvp-specialist` to focus on core value proposition  
-5. **Design architecture**: Use `/architect` to create technical system design
-6. **Plan implementation**: Use `/planner` to break down into executable tasks
-7. **Implement with evidence**: Follow the chain `/pseudo-coder` → `/tdd-evidence-specialist` → `/coder`
+3. **Start with discovery**: Use `/project-initiator` to transform ideas into actionable project briefs
+4. **Gather requirements**: Use `/requirements-collector` to gather comprehensive needs
+5. **Define MVP scope**: Use `/mvp-specialist` to focus on core value proposition  
+6. **Design architecture**: Use `/architect` to create technical system design
+7. **Plan implementation**: Use `/planner` to break down into executable tasks
+8. **Implement with evidence**: Follow the chain `/pseudo-coder` → `/tdd-evidence-specialist` → `/coder`
 
 #### Troubleshooting Slash Commands
 
@@ -152,11 +153,12 @@ If slash commands aren't working (e.g., `/roles` shows `/permissions` instead):
 
 ### Using Natural Language (Fallback)
 
-1. **Initialize with requirements**: "I need the requirements collector role" to gather comprehensive needs
-2. **Define MVP scope**: "Use the mvp specialist role" to focus on core value proposition
-3. **Design architecture**: "I need the architect role" to create technical system design
-4. **Plan implementation**: "Use the planner role" to break down into executable tasks
-5. **Implement with evidence**: Follow the implementation chain with corresponding role requests
+1. **Start with discovery**: "I need the project initiator role" to transform ideas into project briefs
+2. **Gather requirements**: "I need the requirements collector role" to gather comprehensive needs
+3. **Define MVP scope**: "Use the mvp specialist role" to focus on core value proposition
+4. **Design architecture**: "I need the architect role" to create technical system design
+5. **Plan implementation**: "Use the planner role" to break down into executable tasks
+6. **Implement with evidence**: Follow the implementation chain with corresponding role requests
 
 ## Project Structure
 
@@ -168,6 +170,7 @@ If slash commands aren't working (e.g., `/roles` shows `/permissions` instead):
 └── .claude/
     └── commands/                # Slash command definitions
         ├── roles.md             # List all available roles (/roles)
+        ├── project-initiator.md        # Project discovery specialist (/project-initiator)
         ├── requirements-collector.md    # Requirements specialist (/requirements-collector)
         ├── mvp-specialist.md           # MVP strategist (/mvp-specialist)
         ├── architect.md                # Solution architect (/architect)
