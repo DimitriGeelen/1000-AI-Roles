@@ -1,5 +1,5 @@
 This project reflects my personal journey as someone who always wanted programming skills to build useful tools but never developed the necessary expertise. AI pair programming has finally made creating usable applications accessible without requiring extensive upfront skill development. However, working with AI LLMs is quirky and difficult because they can completely derail. I'm trying different methods of "guiding," "coaching," "steering," and limiting the LLM. I've had some interesting experiments with RooCode and Cursor using AI roles. Recently I took another shot at it with Claude Code roles. I've packaged the work and put it on GitHub here.
-This is not quite where I want it to be yet, but I do see this as one of the viable methods for keeping the LLM on track and it's a nice start. Feel encouraged to use it and I welcome feedback here or you can look me up on LinkedIn: https://www.linkedin.com/in/dimitrigeelen/.
+It is not quite where I want it to be yet, but I do see this as one of the viable methods for keeping the LLM on track and it's a nice start. Feel encouraged to use it and I welcome feedback here or you can look me up on LinkedIn: https://www.linkedin.com/in/dimitrigeelen/.
 
 # Claude Code Pair Programming Roles
 
