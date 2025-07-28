@@ -38,6 +38,7 @@ by typing in claude at the command prompt
 or
 
 if you need to install claude first follow the instructions here: https://docs.anthropic.com/en/docs/claude-code/setup
+
 **STEP 3**
 
 **'/' (forward slash) + 'ENTER' in the command prompt, you should now see the avialable roles. You can navigate with the arrow Up/down keys to the roles and then enter to step into the role.**
