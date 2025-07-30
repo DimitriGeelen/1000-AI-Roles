@@ -290,3 +290,4 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 | core-principles.md | Evidence-based development principles and MVP philosophy | 1.0 | 2025-07-22 |
 | CHANGELOG.md | Version history and release notes for the project | 0.2.0 | 2025-07-26 |
 | VERSION | Current version number of the project | 0.2.0 | 2025-07-26 |
+| pseudo-code.md | Comprehensive logic specifications for role editor enhancement with 5 core modules | 1.0 | 2025-07-28 |
