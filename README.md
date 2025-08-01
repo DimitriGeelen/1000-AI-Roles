@@ -78,7 +78,7 @@ User: @requirements-collector
 
 During development of this role-based system, we researched Claude Code's native capabilities for role invocation patterns and discovered important insights:
 
-### Key Findings
+### Key Findings / Options considered
 
 1. **@role Pattern Not Native**: The `@role` invocation pattern described in our CLAUDE.md is a custom specification that doesn't align with Claude Code's standard functionality.
 
