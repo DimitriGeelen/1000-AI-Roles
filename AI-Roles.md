@@ -1097,20 +1097,49 @@ Let's begin:
 
 **When Claude suggests**: "Code is complete. Use @git-mate to handle version control and releases"
 
+## Role Invocation Methods
+
+### **Agent System (Recommended)**
+The role framework now supports Claude Code agents with enhanced capabilities:
+
+**Agent Files**: Located in `.claude/agents/` with YAML frontmatter
+**Invocation**: Claude automatically suggests appropriate agents based on context
+**Benefits**: 
+- Isolated contexts prevent performance degradation
+- Parallel processing (up to 10 concurrent agents)
+- Optimized model selection per role complexity
+- Granular tool permissions
+
+**Available Agents**:
+- `project-initiator` - Project discovery with Sonnet model
+- `requirements-collector` - Requirements gathering with Sonnet model
+- `mvp-specialist` - MVP strategy with Sonnet model  
+- `architect` - Solution architecture with Sonnet model
+- `planner` - Task planning with Sonnet model
+- `pseudo-coder` - Logic design with Sonnet model
+- `tdd-evidence-specialist` - Test development with Sonnet model
+- `coder` - Implementation with Sonnet model
+- `documentation-writer` - Documentation with Haiku model (cost-effective)
+- `git-mate` - Version control with Sonnet model
+- `azure-devops-agent` - CI/CD automation with Sonnet model
+
+### **Slash Commands (Legacy)**
+Original command system still available in `.claude/commands/` for backward compatibility.
+
 ## Agent Invocation Examples
 
 ```
-Claude: "This seems complex. I suggest using @requirements-collector first"
-User: @requirements-collector
+Claude: "This seems complex. I suggest using the requirements-collector agent first"
+User: Use the requirements collector agent
 
-Claude: "Now that requirements are clear, use @mvp-specialist"  
-User: @mvp-specialist
+Claude: "Now that requirements are clear, let's use the mvp-specialist agent"  
+User: Use mvp specialist
 
-Claude: "With MVP defined, @architect can design the system"
-User: @architect
+Claude: "With MVP defined, the architect agent can design the system"
+User: Use architect agent
 
-Claude: "Tasks are defined. Use @pseudo-coder to write the logic"
-User: @pseudo-coder
+Claude: "Tasks are defined. The pseudo-coder agent can write the logic"
+User: Use pseudo coder agent
 ```
 
 ## Agent Chain Suggestions
