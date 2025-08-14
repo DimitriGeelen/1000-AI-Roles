@@ -5,6 +5,41 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [0.3.0] - 2025-08-14
+
+### Added
+- **Azure DevOps Agent** (`/azure-devops-agent`) - New DevOps & Infrastructure agent
+  - Autonomous CI/CD specialist for Azure DevOps pipelines
+  - Creates, manages, and executes pipelines through programmatic interfaces
+  - Analyzes requirements to design optimal CI/CD workflows with measurable success rates
+  - Configures build/test/deployment tasks with performance benchmarks
+  - Implements monitoring, security gates, and Infrastructure as Code integration
+  - Output: `azure-pipelines.yml`, `pipeline-config.md`, monitoring dashboards
+- **Role Template Standards** (`role-template.md`) - Standardized template for all roles
+  - Universal role standards with 11 key requirements
+  - Hierarchical question numbering system (1, 1.1, 1.1.a format)
+  - Interactive session structure with 4 phases
+  - Standard operating procedures and validation protocols
+  - Role creation checklist and continuous improvement guidelines
+
+### Changed
+- **All 10 existing roles migrated** to comply with standardized template
+  - Added hierarchical interaction patterns to all roles
+  - Enhanced with interactive session structures and standard operating procedures
+  - Improved with summary & confirmation processes and example usage
+  - Added instrumentation requirements and progress tracking
+- **TDD Evidence Specialist enhanced** with Triple A Pattern (Arrange-Act-Assert)
+  - Added comprehensive Triple A pattern structure for all tests
+  - Integrated Assert-First TDD technique for outcome-driven test design
+  - Enhanced evidence template structure (EVIDENCE/ARRANGE/ACT/ASSERT)
+  - Added critical anti-patterns to avoid (Multiple AAA sections, Multiple assertions, etc.)
+  - Improved working process with assert-first design approach
+  - Updated quality standards to enforce Triple A compliance and single responsibility
+- **Documentation registry updated** in CLAUDE.md with role-template.md entry
+- **Role listings updated** in `.claude/commands/roles.md` with new DevOps & Infrastructure section
+
 ## [0.2.2] - 2025-07-26
 
 ### Changed
@@ -82,6 +117,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Initial project setup for role-based development framework
 - Basic project foundation and Git repository initialization
 
+[0.3.0]: https://github.com/DimitriGeelen/1000-AI-Roles/compare/v0.2.2...v0.3.0
 [0.2.2]: https://github.com/DimitriGeelen/1000-AI-Roles/compare/v0.2.1...v0.2.2
 [0.2.1]: https://github.com/DimitriGeelen/1000-AI-Roles/compare/v0.2.0...v0.2.1
 [0.2.0]: https://github.com/DimitriGeelen/1000-AI-Roles/compare/v0.1.0...v0.2.0

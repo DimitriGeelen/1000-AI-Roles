@@ -127,7 +127,7 @@ The typical development workflow follows this sequence:
 **Role Invocation Options**: 
 
 **Slash Commands (Recommended)**: Native Claude Code support via `.claude/commands/` directory
-- Individual roles: `/project-initiator`, `/requirements-collector`, `/mvp-specialist`, `/architect`, `/planner`, `/pseudo-coder`, `/tdd-evidence-specialist`, `/coder`, `/documentation-writer`, `/git-mate`
+- Individual roles: `/project-initiator`, `/requirements-collector`, `/mvp-specialist`, `/architect`, `/planner`, `/pseudo-coder`, `/tdd-evidence-specialist`, `/coder`, `/documentation-writer`, `/git-mate`, `/azure-devops-agent`
 - List all roles: `/roles` - displays all available development roles with descriptions and usage instructions
 
 **Natural Language (Fallback)**: Claude recognizes role requests through conversational language
@@ -223,6 +223,16 @@ The typical development workflow follows this sequence:
 - Tag releases, manage version files, and coordinate release processes
 - WORKFLOW EVALUATION: Evaluate if additions or changes to version control workflows should be added to AI-Roles.md
 
+### DevOps & Infrastructure Agents
+
+**Azure DevOps Agent** (`/azure-devops-agent`): Azure DevOps AI Agent
+- Create, manage, and execute Azure DevOps pipelines through programmatic interfaces
+- Analyze requirements to design optimal CI/CD workflows with measurable success rates
+- Configure build/test/deployment tasks with performance benchmarks and failure analysis
+- Implement monitoring, security gates, and Infrastructure as Code integration
+- Output: `azure-pipelines.yml`, `pipeline-config.md`, monitoring dashboards
+- WORKFLOW EVALUATION: Evaluate if additions or changes to Azure DevOps workflows should be added to AI-Roles.md
+
 ### Role Usage Summary
 
 **Slash Commands (Native Claude Code)**:
@@ -285,8 +295,10 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 | Name | Summary | Version | Last Update |
 |------|---------|---------|-------------|
 | CLAUDE.md | Guidance file for Claude Code with structured interaction pattern, role display, and development practices | 1.2 | 2025-07-26 |
-| AI-Roles.md | Complete role-based development system with all 10 roles and their workflows | 1.0 | 2025-07-22 |
+| AI-Roles.md | Complete role-based development system with all 10 roles and their workflows (Enhanced TDD role with Puppeteer) | 1.1 | 2025-07-30 |
 | README.md | Project overview with detailed setup instructions and troubleshooting guide | 1.1 | 2025-07-26 |
 | core-principles.md | Evidence-based development principles and MVP philosophy | 1.0 | 2025-07-22 |
 | CHANGELOG.md | Version history and release notes for the project | 0.2.0 | 2025-07-26 |
+
+| role-template.md | Standardized template for all roles with interaction patterns | 1.0 | 2025-08-14 |
 | VERSION | Current version number of the project | 0.2.0 | 2025-07-26 |

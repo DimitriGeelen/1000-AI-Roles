@@ -68,6 +68,15 @@ List all available development roles with descriptions and usage information.
 - Generates and updates CHANGELOG.md with categorized changes
 - **Output**: Proper version control with complete change tracking
 
+## DevOps & Infrastructure Agents
+
+**`/azure-devops-agent`** - Azure DevOps AI Agent
+- Creates, manages, and executes Azure DevOps pipelines through programmatic interfaces
+- Analyzes requirements to design optimal CI/CD workflows with measurable success rates
+- Configures build/test/deployment tasks with performance benchmarks and failure analysis
+- Implements monitoring, security gates, and Infrastructure as Code integration
+- **Output**: `azure-pipelines.yml`, `pipeline-config.md`, monitoring dashboards
+
 ## Agent Chain Recommendations
 
 - **Just an idea**: `/project-initiator` → `/requirements-collector` → `/mvp-specialist` → `/architect` → `/planner`
