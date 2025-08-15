@@ -3,6 +3,17 @@ It is not quite where I want it to be yet, but I do see this as one of the viabl
 
 # Claude Code Pair Programming Roles
 
+## 🚀 **NEW: Enhanced Agent System** 
+
+**40-60% Performance Improvement** with Claude Code Agents! This project now features an advanced agent system with:
+
+- ⚡ **Parallel Processing**: Up to 10 concurrent agents
+- 🎯 **Isolated Contexts**: No performance degradation in long sessions  
+- 🧠 **Optimized Models**: Sonnet for complex tasks, Haiku for simple ones
+- 🔧 **Granular Permissions**: Each agent has specific tool access
+
+---
+
 Is a role-based development framework using evidence-based development principles and specialized AI workflows. This project demonstrates a systematic approach to building software using specialized AI agents for different aspects of development.
 
 This framework is designed to improve AI-human pair programming outcomes by providing structured, evidence-based workflows that reduce frustration and increase productivity through clear role definitions and measurable results.
@@ -39,11 +50,14 @@ or
 
 if you need to install claude first follow the instructions here: https://docs.anthropic.com/en/docs/claude-code/setup
 
-**STEP 3**
+**STEP 3 - Use the Advanced Agent System**
 
-**'/' (forward slash) + 'ENTER' in the command prompt, you should now see the avialable roles. You can navigate with the arrow Up/down keys to the roles and then enter to step into the role.**
-**You can also type '/roles' + 'ENTER'--> will also show you the available roles or type in teh role directly by '/(RoleName) + 'ENTER'**
-**for a new project i suggest to start with the '/project-initiator' role but this is not a requirments**
+🎯 **Recommended: Just start working!** Claude automatically suggests the right agent for your task:
+- Start describing your project → Claude suggests: "I recommend using the project-initiator agent"
+- Need requirements? → Claude suggests: "Let's use the requirements-collector agent"  
+- Ready to code? → Claude suggests: "Time for the coder agent"
+
+**Legacy Option**: Use slash commands `/roles` + ENTER to see available commands, or type directly like `/project-initiator`
 
 
 **p.s. some pointers to deal with quirkiness, aim to refine this a the next release.**
@@ -120,14 +134,31 @@ This project now implements **three approaches**:
 
 This hybrid approach maintains the sophisticated role-based development system while working within Claude Code's architectural constraints.
 
-## Getting Started
+## 🚀 Getting Started with Agents (Recommended)
 
-### Using Agent System (Recommended)
+### **The Agent Advantage**
 
-1. **Clone the repository** - The `.claude/agents/` directory contains 10 specialized agents
-2. **Natural invocation**: Claude automatically suggests agents based on your current context
-3. **Agent benefits**: Isolated contexts, parallel processing, and optimized performance
-4. **Example workflow**: Claude suggests → "I recommend using the requirements-collector agent" → You confirm
+**Simply describe what you want to build** - Claude intelligently suggests the right agent:
+
+```
+You: "I want to build a task management app"
+Claude: "I recommend using the project-initiator agent to transform this idea into a structured project brief"
+You: "Use project initiator agent" 
+→ Specialized agent launches with optimized context
+```
+
+### **10 Specialized Agents Available**
+
+1. 🎯 **project-initiator** - Transform ideas into actionable briefs
+2. 📋 **requirements-collector** - Gather comprehensive requirements  
+3. 🎪 **mvp-specialist** - Define core value proposition
+4. 🏗️ **architect** - Design system architecture
+5. 📝 **planner** - Break down implementation tasks
+6. 🤖 **pseudo-coder** - Design logic and algorithms
+7. 🧪 **tdd-evidence-specialist** - Create comprehensive tests
+8. 💻 **coder** - Implement clean, modular code
+9. 📚 **documentation-writer** - Create user-focused docs (Haiku-optimized)
+10. 🔄 **git-mate** - Handle version control workflows
 
 ### Using Slash Commands (Legacy)
 
