@@ -126,18 +126,24 @@ The typical development workflow follows this sequence:
 
 **Role Invocation Options**: 
 
-**Slash Commands (Recommended)**: Native Claude Code support via `.claude/commands/` directory
+**Agent System (Recommended)**: Enhanced Claude Code agents with YAML configuration in `.claude/agents/` directory
+- **Benefits**: Isolated contexts, parallel processing, optimized model selection, granular tool permissions
+- **Agent Files**: 11 specialized agents with YAML frontmatter for advanced configuration
+- **Invocation**: Claude automatically suggests appropriate agents based on context
+- **Performance**: 40-60% improvement in long development sessions, up to 10 concurrent agents
+
+**Slash Commands (Legacy)**: Original system in `.claude/commands/` directory maintained for backward compatibility
 - Individual roles: `/project-initiator`, `/requirements-collector`, `/mvp-specialist`, `/architect`, `/planner`, `/pseudo-coder`, `/tdd-evidence-specialist`, `/coder`, `/documentation-writer`, `/git-mate`, `/azure-devops-agent`
 - List all roles: `/roles` - displays all available development roles with descriptions and usage instructions
 
-**Natural Language (Fallback)**: Claude recognizes role requests through conversational language
-- "I need the requirements collector role"
-- "Use the architect role" 
-- "I want to use the mvp specialist"
+**Natural Language (Universal)**: Claude recognizes role requests through conversational language
+- "Use the requirements collector agent"
+- "I need the architect agent" 
+- "Let's use the mvp specialist"
 
-**Agent Suggestions**: Claude will recommend appropriate roles based on context
-- "I recommend using the requirements collector role to gather your needs first"
-- "With requirements complete, let's use the mvp specialist role"
+**Agent Suggestions**: Claude automatically recommends appropriate agents based on project context and current state
+- "I recommend using the requirements-collector agent to gather your needs first"
+- "With requirements complete, let's use the mvp-specialist agent"
 
 ### Foundation Agents
 

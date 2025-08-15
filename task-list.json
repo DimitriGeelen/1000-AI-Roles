@@ -1,0 +1,919 @@
+{
+  "project": "Azure DevOps Integration",
+  "version": "1.0",
+  "created": "2025-08-14",
+  "total_story_points": 57,
+  "mvp_story_points": 29,
+  "epics": [
+    {
+      "id": "E1",
+      "name": "Foundation Phase",
+      "description": "Authentication, basic API client, and simple operations",
+      "phase": "Phase 1",
+      "weeks": "1-2",
+      "features": [
+        {
+          "id": "F1",
+          "name": "Authentication Service",
+          "user_stories": ["US001", "US013"],
+          "story_points": 6,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T001",
+              "name": "Setup PAT Authentication",
+              "status": "completed",
+              "effort": 2,
+              "dependencies": [],
+              "description": "Implement Personal Access Token validation and secure storage",
+              "acceptance_criteria": [
+                "PAT validation with Azure DevOps API",
+                "Secure environment variable storage",
+                "No credential exposure in logs"
+              ]
+            },
+            {
+              "id": "T002",
+              "name": "Create Configuration Manager",
+              "status": "completed",
+              "effort": 2,
+              "dependencies": ["T001"],
+              "description": "Centralized configuration loading and validation system",
+              "acceptance_criteria": [
+                "Environment variable loading",
+                "Configuration validation",
+                "Default value application"
+              ]
+            },
+            {
+              "id": "T003",
+              "name": "Implement Auth Validation",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": ["T001", "T002"],
+              "description": "Validate credentials at startup with clear feedback",
+              "acceptance_criteria": [
+                "Startup credential validation",
+                "Success/failure feedback",
+                "Connection status verification"
+              ]
+            },
+            {
+              "id": "T004",
+              "name": "Test Authentication Security",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": ["T001", "T002", "T003"],
+              "description": "Comprehensive security testing for PAT handling",
+              "acceptance_criteria": [
+                "No credential leakage tests",
+                "Memory cleanup validation",
+                "Error handling security tests"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F2",
+          "name": "Azure DevOps API Client",
+          "user_stories": ["US001"],
+          "story_points": 3,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T005",
+              "name": "Create HTTP Client",
+              "status": "completed",
+              "effort": 2,
+              "dependencies": ["T001"],
+              "description": "Low-level HTTP client for Azure DevOps REST API",
+              "acceptance_criteria": [
+                "HTTP request/response handling",
+                "Authentication header management",
+                "Response deserialization"
+              ]
+            },
+            {
+              "id": "T006",
+              "name": "Implement Rate Limiting",
+              "status": "completed",
+              "effort": 2,
+              "dependencies": ["T005"],
+              "description": "Rate limiting enforcement for API compliance",
+              "acceptance_criteria": [
+                "Rate limit detection",
+                "Exponential backoff implementation",
+                "Zero API violations"
+              ]
+            },
+            {
+              "id": "T007",
+              "name": "Add Connectivity Monitoring",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": ["T005"],
+              "description": "Monitor and detect Azure DevOps API connectivity",
+              "acceptance_criteria": [
+                "Connection status detection",
+                "Automatic reconnection attempts",
+                "Status reporting to services"
+              ]
+            },
+            {
+              "id": "T008",
+              "name": "Test API Client",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": ["T005", "T006", "T007"],
+              "description": "Comprehensive API client testing",
+              "acceptance_criteria": [
+                "Unit tests for all methods",
+                "Integration tests with Azure DevOps",
+                "Error handling validation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F3",
+          "name": "Basic Work Item Operations",
+          "user_stories": ["US003", "US004"],
+          "story_points": 8,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T009",
+              "name": "Create PBI Operations",
+              "status": "completed",
+              "effort": 3,
+              "dependencies": ["T005"],
+              "description": "Implement Product Backlog Item creation functionality",
+              "acceptance_criteria": [
+                "PBI creation with contextual content",
+                "Title and description generation",
+                "Work item ID and link return"
+              ]
+            },
+            {
+              "id": "T010",
+              "name": "Implement Status Updates",
+              "status": "completed",
+              "effort": 2,
+              "dependencies": ["T009"],
+              "description": "Update work item status through workflow states",
+              "acceptance_criteria": [
+                "Status progression (New → Active → Done)",
+                "Workflow validation",
+                "State change confirmation"
+              ]
+            },
+            {
+              "id": "T011",
+              "name": "Add Work Item Details",
+              "status": "completed",
+              "effort": 2,
+              "dependencies": ["T009"],
+              "description": "Update work item descriptions and implementation notes",
+              "acceptance_criteria": [
+                "Description updates",
+                "Implementation notes addition",
+                "Comment handling"
+              ]
+            },
+            {
+              "id": "T012",
+              "name": "Test Work Item CRUD",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": ["T009", "T010", "T011"],
+              "description": "Test all work item create, read, update operations",
+              "acceptance_criteria": [
+                "End-to-end CRUD testing",
+                "Error scenario validation",
+                "Response time verification"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F4",
+          "name": "Error Handling Framework",
+          "user_stories": ["US010"],
+          "story_points": 3,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T013",
+              "name": "Create Error Categories",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": [],
+              "description": "Define error classification and handling strategies",
+              "acceptance_criteria": [
+                "Authentication error handling",
+                "Network error handling",
+                "API rate limit handling"
+              ]
+            },
+            {
+              "id": "T014",
+              "name": "Implement User Messages",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": ["T013"],
+              "description": "User-friendly error messages and recovery guidance",
+              "acceptance_criteria": [
+                "Clear error explanations",
+                "Actionable recovery steps",
+                "Technical details on demand"
+              ]
+            },
+            {
+              "id": "T015",
+              "name": "Add Error Recovery",
+              "status": "completed",
+              "effort": 2,
+              "dependencies": ["T013", "T014"],
+              "description": "Automatic error recovery and retry mechanisms",
+              "acceptance_criteria": [
+                "Retry logic implementation",
+                "Circuit breaker pattern",
+                "Graceful degradation"
+              ]
+            },
+            {
+              "id": "T016",
+              "name": "Test Error Scenarios",
+              "status": "completed",
+              "effort": 1,
+              "dependencies": ["T013", "T014", "T015"],
+              "description": "Comprehensive error handling testing",
+              "acceptance_criteria": [
+                "All error types tested",
+                "Recovery mechanism validation",
+                "User message clarity verification"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "name": "Intelligence Phase",
+      "description": "Context analysis, NLP parsing, and intelligent suggestions",
+      "phase": "Phase 2",
+      "weeks": "3-4",
+      "features": [
+        {
+          "id": "F5",
+          "name": "Context Intelligence Service",
+          "user_stories": ["US002"],
+          "story_points": 5,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T017",
+              "name": "Create Context Analyzer",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T005"],
+              "description": "Analyze development context from Git and file system",
+              "acceptance_criteria": [
+                "Git context extraction",
+                "File system context analysis",
+                "Development activity detection"
+              ]
+            },
+            {
+              "id": "T018",
+              "name": "Implement NLP Parser",
+              "status": "pending",
+              "effort": 3,
+              "dependencies": ["T017"],
+              "description": "Natural language command interpretation",
+              "acceptance_criteria": [
+                "Intent recognition accuracy",
+                "Parameter extraction",
+                "Command disambiguation"
+              ]
+            },
+            {
+              "id": "T019",
+              "name": "Build Suggestion Engine",
+              "status": "pending",
+              "effort": 3,
+              "dependencies": ["T017", "T018"],
+              "description": "Generate contextual work item suggestions",
+              "acceptance_criteria": [
+                "Relevant suggestion generation",
+                "Pre-populated content creation",
+                "Context-aware recommendations"
+              ]
+            },
+            {
+              "id": "T020",
+              "name": "Test Intelligence Features",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T017", "T018", "T019"],
+              "description": "Test context analysis and suggestion accuracy",
+              "acceptance_criteria": [
+                "Context detection accuracy ≥70%",
+                "Suggestion relevance validation",
+                "NLP parsing accuracy testing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F6",
+          "name": "Natural Language Interface",
+          "user_stories": ["US011"],
+          "story_points": 4,
+          "priority": "Should Have",
+          "tasks": [
+            {
+              "id": "T021",
+              "name": "Create Command Dispatcher",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T018"],
+              "description": "Route natural language commands to appropriate handlers",
+              "acceptance_criteria": [
+                "Command routing logic",
+                "Intent-to-action mapping",
+                "Parameter validation"
+              ]
+            },
+            {
+              "id": "T022",
+              "name": "Implement Conversation Flow",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T021"],
+              "description": "Natural conversational interface for work item operations",
+              "acceptance_criteria": [
+                "Conversational context maintenance",
+                "Follow-up question handling",
+                "Natural response generation"
+              ]
+            },
+            {
+              "id": "T023",
+              "name": "Add Confirmation Dialogs",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T021", "T022"],
+              "description": "User confirmation for critical operations",
+              "acceptance_criteria": [
+                "Operation preview display",
+                "User confirmation prompts",
+                "Modification before submission"
+              ]
+            },
+            {
+              "id": "T024",
+              "name": "Test Natural Interface",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T021", "T022", "T023"],
+              "description": "Test natural language interface usability",
+              "acceptance_criteria": [
+                "Command interpretation accuracy",
+                "User experience validation",
+                "Conversation flow testing"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F7",
+          "name": "Test Documentation Integration",
+          "user_stories": ["US005"],
+          "story_points": 3,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T025",
+              "name": "Create Test Outcome Formatter",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T009"],
+              "description": "Format test results for work item documentation",
+              "acceptance_criteria": [
+                "Test result parsing",
+                "Pass/fail status formatting",
+                "Edge case documentation"
+              ]
+            },
+            {
+              "id": "T026",
+              "name": "Implement Status Tracking",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T025", "T010"],
+              "description": "Update work item status based on testing completion",
+              "acceptance_criteria": [
+                "Testing completion detection",
+                "Status progression automation",
+                "Test coverage validation"
+              ]
+            },
+            {
+              "id": "T027",
+              "name": "Add Performance Notes",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T025"],
+              "description": "Include performance metrics in test documentation",
+              "acceptance_criteria": [
+                "Performance data extraction",
+                "Metric formatting",
+                "Benchmark comparison"
+              ]
+            },
+            {
+              "id": "T028",
+              "name": "Test Documentation Features",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T025", "T026", "T027"],
+              "description": "Validate test outcome documentation functionality",
+              "acceptance_criteria": [
+                "Complete test documentation",
+                "Traceability verification",
+                "Status update accuracy"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "name": "Resilience Phase",
+      "description": "Offline operations, persistence, and conflict resolution",
+      "phase": "Phase 3",
+      "weeks": "5-6",
+      "features": [
+        {
+          "id": "F8",
+          "name": "Operation Queue Service",
+          "user_stories": ["US009"],
+          "story_points": 4,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T029",
+              "name": "Create SQLite Repository",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": [],
+              "description": "Local data persistence for configuration and queue management",
+              "acceptance_criteria": [
+                "Database schema creation",
+                "Queue operation persistence",
+                "Configuration storage"
+              ]
+            },
+            {
+              "id": "T030",
+              "name": "Implement Queue Manager",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T029", "T007"],
+              "description": "Queue operations during offline periods",
+              "acceptance_criteria": [
+                "Operation queuing logic",
+                "Queue persistence",
+                "Priority handling"
+              ]
+            },
+            {
+              "id": "T031",
+              "name": "Build Sync Orchestrator",
+              "status": "pending",
+              "effort": 3,
+              "dependencies": ["T030", "T005"],
+              "description": "Automatic synchronization when connectivity resumes",
+              "acceptance_criteria": [
+                "Connectivity restoration detection",
+                "Automatic queue processing",
+                "Sync progress reporting"
+              ]
+            },
+            {
+              "id": "T032",
+              "name": "Test Offline Operations",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T029", "T030", "T031"],
+              "description": "Comprehensive offline operation testing",
+              "acceptance_criteria": [
+                "Queue operation validation",
+                "Sync process testing",
+                "Data integrity verification"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F9",
+          "name": "Conflict Resolution System",
+          "user_stories": ["US009"],
+          "story_points": 3,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T033",
+              "name": "Create Conflict Detector",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T031"],
+              "description": "Detect conflicts between queued and server state",
+              "acceptance_criteria": [
+                "State comparison logic",
+                "Conflict identification",
+                "Conflict categorization"
+              ]
+            },
+            {
+              "id": "T034",
+              "name": "Implement Resolution Logic",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T033"],
+              "description": "Automated and manual conflict resolution",
+              "acceptance_criteria": [
+                "Automatic resolution strategies",
+                "Manual resolution interface",
+                "Resolution validation"
+              ]
+            },
+            {
+              "id": "T035",
+              "name": "Add User Guidance",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T033", "T034"],
+              "description": "Guide users through conflict resolution",
+              "acceptance_criteria": [
+                "Conflict explanation",
+                "Resolution options display",
+                "User decision support"
+              ]
+            },
+            {
+              "id": "T036",
+              "name": "Test Conflict Resolution",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T033", "T034", "T035"],
+              "description": "Test conflict detection and resolution",
+              "acceptance_criteria": [
+                "Various conflict scenarios",
+                "Resolution accuracy",
+                "User guidance effectiveness"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F10",
+          "name": "Advanced Work Item Features",
+          "user_stories": ["US006", "US007", "US008"],
+          "story_points": 12,
+          "priority": "Should Have",
+          "tasks": [
+            {
+              "id": "T037",
+              "name": "Implement Bug Creation",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T009"],
+              "description": "Create bug work items with reproduction context",
+              "acceptance_criteria": [
+                "Bug work item creation",
+                "Reproduction step documentation",
+                "Severity assessment"
+              ]
+            },
+            {
+              "id": "T038",
+              "name": "Build Batch Operations",
+              "status": "pending",
+              "effort": 3,
+              "dependencies": ["T009", "T030"],
+              "description": "Update multiple work items in batch operations",
+              "acceptance_criteria": [
+                "Batch update logic",
+                "Transaction management",
+                "Rollback capability"
+              ]
+            },
+            {
+              "id": "T039",
+              "name": "Create Query Engine",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T005"],
+              "description": "Query existing work items for context",
+              "acceptance_criteria": [
+                "Work item search functionality",
+                "Filter and sort options",
+                "Result relevance ranking"
+              ]
+            },
+            {
+              "id": "T040",
+              "name": "Test Advanced Features",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T037", "T038", "T039"],
+              "description": "Test advanced work item management features",
+              "acceptance_criteria": [
+                "Bug creation validation",
+                "Batch operation testing",
+                "Query accuracy verification"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "E4",
+      "name": "Optimization Phase",
+      "description": "Performance monitoring, evidence collection, and user experience polish",
+      "phase": "Phase 4",
+      "weeks": "7-8",
+      "features": [
+        {
+          "id": "F11",
+          "name": "Monitoring & Evidence Collection",
+          "user_stories": ["US014", "US015"],
+          "story_points": 5,
+          "priority": "Should Have",
+          "tasks": [
+            {
+              "id": "T041",
+              "name": "Create Metrics Collector",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": [],
+              "description": "Comprehensive instrumentation and metrics collection",
+              "acceptance_criteria": [
+                "Operation metrics tracking",
+                "Performance monitoring",
+                "User interaction analytics"
+              ]
+            },
+            {
+              "id": "T042",
+              "name": "Implement Operation Logging",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T041"],
+              "description": "Detailed operation logging and audit trail",
+              "acceptance_criteria": [
+                "Operation history tracking",
+                "Error logging without sensitive data",
+                "Audit trail maintenance"
+              ]
+            },
+            {
+              "id": "T043",
+              "name": "Build Performance Dashboard",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T041", "T042"],
+              "description": "Performance monitoring and alerting",
+              "acceptance_criteria": [
+                "Response time tracking",
+                "Success rate monitoring",
+                "Alert threshold configuration"
+              ]
+            },
+            {
+              "id": "T044",
+              "name": "Test Evidence Collection",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T041", "T042", "T043"],
+              "description": "Validate evidence collection and monitoring",
+              "acceptance_criteria": [
+                "Metrics accuracy verification",
+                "Logging completeness check",
+                "Performance target validation"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F12",
+          "name": "Performance Optimization",
+          "user_stories": ["US015"],
+          "story_points": 3,
+          "priority": "Should Have",
+          "tasks": [
+            {
+              "id": "T045",
+              "name": "Optimize API Calls",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T006", "T041"],
+              "description": "Optimize API usage patterns and reduce calls",
+              "acceptance_criteria": [
+                "API call optimization",
+                "Response caching",
+                "Bulk operation efficiency"
+              ]
+            },
+            {
+              "id": "T046",
+              "name": "Improve Response Times",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T045", "T019"],
+              "description": "Optimize response times for all operations",
+              "acceptance_criteria": [
+                "95% operations under 5 seconds",
+                "Context analysis optimization",
+                "Suggestion generation speed"
+              ]
+            },
+            {
+              "id": "T047",
+              "name": "Test Performance Targets",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T045", "T046"],
+              "description": "Validate all performance targets are met",
+              "acceptance_criteria": [
+                "Response time validation",
+                "Rate limit compliance",
+                "Resource usage verification"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F13",
+          "name": "User Experience Polish",
+          "user_stories": ["US012"],
+          "story_points": 3,
+          "priority": "Should Have",
+          "tasks": [
+            {
+              "id": "T048",
+              "name": "Enhance Preview System",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T023"],
+              "description": "Rich preview system for work item changes",
+              "acceptance_criteria": [
+                "Detailed change preview",
+                "Before/after comparison",
+                "Modification interface"
+              ]
+            },
+            {
+              "id": "T049",
+              "name": "Improve User Feedback",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T022"],
+              "description": "Enhanced user feedback and guidance",
+              "acceptance_criteria": [
+                "Progress indicators",
+                "Success confirmations",
+                "Clear status updates"
+              ]
+            },
+            {
+              "id": "T050",
+              "name": "Polish Error Messages",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T014"],
+              "description": "Final polish on error messages and recovery",
+              "acceptance_criteria": [
+                "User-friendly language",
+                "Contextual help",
+                "Recovery action clarity"
+              ]
+            },
+            {
+              "id": "T051",
+              "name": "Test User Experience",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T048", "T049", "T050"],
+              "description": "Comprehensive user experience testing",
+              "acceptance_criteria": [
+                "User satisfaction validation",
+                "Usability testing",
+                "Workflow efficiency measurement"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "F14",
+          "name": "Production Readiness",
+          "user_stories": ["All"],
+          "story_points": 4,
+          "priority": "Must Have",
+          "tasks": [
+            {
+              "id": "T052",
+              "name": "Create Integration Tests",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T051"],
+              "description": "End-to-end integration testing suite",
+              "acceptance_criteria": [
+                "Complete workflow testing",
+                "Error scenario coverage",
+                "Performance validation"
+              ]
+            },
+            {
+              "id": "T053",
+              "name": "Document System Architecture",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T052"],
+              "description": "Comprehensive system documentation",
+              "acceptance_criteria": [
+                "Architecture documentation",
+                "API documentation",
+                "Troubleshooting guides"
+              ]
+            },
+            {
+              "id": "T054",
+              "name": "Create User Documentation",
+              "status": "pending",
+              "effort": 1,
+              "dependencies": ["T053"],
+              "description": "User guides and setup instructions",
+              "acceptance_criteria": [
+                "Setup guide",
+                "Usage examples",
+                "FAQ documentation"
+              ]
+            },
+            {
+              "id": "T055",
+              "name": "Final System Validation",
+              "status": "pending",
+              "effort": 2,
+              "dependencies": ["T052", "T053", "T054"],
+              "description": "Complete system validation for production",
+              "acceptance_criteria": [
+                "All acceptance criteria met",
+                "Performance targets achieved",
+                "Security validation complete"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_epics": 4,
+    "total_features": 14,
+    "total_tasks": 55,
+    "must_have_tasks": 32,
+    "should_have_tasks": 23,
+    "estimated_weeks": 8,
+    "mvp_completion": "Phase 3 end (Week 6)",
+    "full_completion": "Phase 4 end (Week 8)"
+  },
+  "dependencies": {
+    "critical_path": ["T001", "T005", "T009", "T017", "T029", "T041"],
+    "parallel_tracks": [
+      "Authentication & API Client (T001-T008)",
+      "Work Item Operations (T009-T012)",
+      "Error Handling (T013-T016)",
+      "Intelligence Features (T017-T024)",
+      "Offline Operations (T029-T036)",
+      "Performance & Monitoring (T041-T051)"
+    ]
+  },
+  "evidence_tracking": {
+    "required_metrics": [
+      "Authentication success rate (target: 100%)",
+      "Response time (target: 95% under 5 seconds)",
+      "API rate compliance (target: Zero violations)",
+      "Context detection accuracy (target: ≥70%)",
+      "Offline operation success (target: 100% eventual consistency)",
+      "User satisfaction (target: ≥90%)"
+    ],
+    "instrumentation_tasks": ["T041", "T042", "T043"],
+    "validation_tasks": ["T044", "T047", "T051", "T055"]
+  }
+}
