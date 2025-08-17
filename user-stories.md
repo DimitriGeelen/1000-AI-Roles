@@ -275,9 +275,150 @@
 
 ---
 
-## Total Story Points: 57
-**Must Have Stories:** 27 points (47% of total)  
-**Should Have Stories:** 30 points (53% of total)
+## Event Management User Stories (Features #4 & #5)
+
+### Feature #4: Event Creation & Management (8 Story Points)
+
+#### US016: Basic Event Creation Workflow (≤5 steps)
+**As an** event organizer (varying technical comfort levels)  
+**I want** to create a new event with essential information in ≤5 steps  
+**So that** I can quickly post events for my community to discover
+
+**Acceptance Criteria:**
+- **Given** I am an authenticated event organizer
+- **When** I navigate to the event creation page
+- **Then** I can complete event creation in maximum 5 steps
+- **And** required fields include: event title, date/time, location, brief description
+- **And** the interface is optimized for mobile-first usage
+- **And** the process accommodates users with varying technical comfort levels
+
+**Priority:** Must Have  
+**Estimated Effort:** 3 Story Points  
+**Azure DevOps ID:** [To be created]
+
+#### US017: Event Information Management & Editing
+**As an** event organizer  
+**I want** to edit and update my published event details  
+**So that** I can keep event information accurate and current
+
+**Acceptance Criteria:**
+- **Given** I have created an event
+- **When** I access my event management dashboard
+- **Then** I can edit all event details (title, date, location, description)
+- **And** changes are saved and immediately visible to event seekers
+- **And** I can add optional enhanced information (contact details, pricing, special requirements)
+- **And** the editing process maintains the same mobile-first design principles
+
+**Priority:** Must Have  
+**Estimated Effort:** 2 Story Points  
+**Azure DevOps ID:** [To be created]
+
+#### US018: Event Lifecycle Management (Delete/Archive)
+**As an** event organizer  
+**I want** to manage the complete lifecycle of my events  
+**So that** I can control event visibility and maintain accurate event listings
+
+**Acceptance Criteria:**
+- **Given** I have created events
+- **When** I access my event management interface
+- **Then** I can delete events that are cancelled or no longer relevant
+- **And** I can mark events as "completed" to move them to archive
+- **And** I can duplicate past events to create similar new events quickly
+- **And** I receive confirmation before any permanent deletion actions
+
+**Priority:** Should Have  
+**Estimated Effort:** 2 Story Points  
+**Azure DevOps ID:** [To be created]
+
+#### US019: Progressive Enhancement for Event Details
+**As an** event organizer who wants more detailed event listings  
+**I want** optional advanced features for enhanced event information  
+**So that** I can provide comprehensive details without overwhelming basic users
+
+**Acceptance Criteria:**
+- **Given** I am creating or editing an event
+- **When** I choose to use enhanced features
+- **Then** I can add optional details such as: event categories, contact information, registration requirements, accessibility information, pricing details
+- **And** these enhanced features are clearly optional and don't interfere with basic creation flow
+- **And** basic users can ignore enhanced features without impact to their experience
+- **And** enhanced information is displayed appropriately to event seekers
+
+**Priority:** Could Have  
+**Estimated Effort:** 1 Story Point  
+**Azure DevOps ID:** [To be created]
+
+---
+
+### Feature #5: Event Discovery & Search (5 Story Points)
+
+#### US020: Basic Event Search (≤3 steps)
+**As an** event seeker/attendee  
+**I want** to search for events in my area with ≤3 steps  
+**So that** I can quickly discover relevant community events
+
+**Acceptance Criteria:**
+- **Given** I am using the event discovery interface
+- **When** I want to find events
+- **Then** I can complete a basic search in maximum 3 steps
+- **And** I can search by area (village, community, regional)
+- **And** I can filter by timeslot (tonight, this weekend, specific dates)
+- **And** search results display relevant events based on my criteria
+- **And** the interface is optimized for mobile-first usage
+
+**Priority:** Must Have  
+**Estimated Effort:** 2 Story Points  
+**Azure DevOps ID:** [To be created]
+
+#### US021: Event Filtering by Type & Category
+**As an** event seeker  
+**I want** to filter events by type and category  
+**So that** I can find specific kinds of events that interest me
+
+**Acceptance Criteria:**
+- **Given** I am viewing search results or browsing events
+- **When** I want to narrow down event types
+- **Then** I can filter by event type (town festivals, cultural events, community meetings, etc.)
+- **And** I can apply multiple filters simultaneously
+- **And** filter options are clearly displayed and easy to use on mobile
+- **And** filtered results update immediately and show relevant events
+- **And** I can easily clear filters to return to full results
+
+**Priority:** Must Have  
+**Estimated Effort:** 2 Story Points  
+**Azure DevOps ID:** [To be created]
+
+#### US022: Advanced Search with Progressive Enhancement
+**As a** community member who wants detailed event discovery  
+**I want** advanced search capabilities with optional enhancement features  
+**So that** I can find exactly the events I'm looking for without overwhelming basic users
+
+**Acceptance Criteria:**
+- **Given** I want more sophisticated search options
+- **When** I access advanced search features
+- **Then** I can search by additional criteria such as: distance from location, specific dates/times, event size, accessibility features, cost/free events
+- **And** advanced features are clearly optional and don't interfere with basic search
+- **And** I can save search preferences for future use
+- **And** advanced search maintains the mobile-first design principles
+- **And** basic users can ignore advanced features without impact to their search experience
+
+**Priority:** Should Have  
+**Estimated Effort:** 1 Story Point  
+**Azure DevOps ID:** [To be created]
+
+---
+
+## Total Story Points: 70
+**Azure DevOps Integration Stories:** 57 points  
+**Event Management Stories (Features #4 & #5):** 13 points  
+
+**Must Have Stories:** 32 points (46% of total)  
+**Should Have Stories:** 33 points (47% of total)  
+**Could Have Stories:** 5 points (7% of total)
 
 ## MVP Recommendation
-Focus on Must Have stories (US001, US002, US003, US004, US005, US009, US010, US013) for initial release, providing core work item CRUD functionality with reliable error handling and secure authentication.
+
+### Phase 1 - Core Azure DevOps Integration
+Focus on Must Have Azure DevOps stories (US001, US002, US003, US004, US005, US009, US010, US013) for initial release, providing core work item CRUD functionality with reliable error handling and secure authentication.
+
+### Phase 2 - Event Management Core Features
+Implement Must Have Event Management stories (US016, US017, US020, US021) providing essential event creation and discovery functionality with mobile-first design for community event platform.

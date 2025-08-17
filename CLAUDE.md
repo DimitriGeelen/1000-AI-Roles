@@ -161,12 +161,16 @@ The typical development workflow follows this sequence:
 - Output: `user-stories.md` with comprehensive requirements
 - WORKFLOW EVALUATION: Evaluate if additions or changes to requirements collection workflows should be added to AI-Roles.md
 
-**MVP Specialist** (`/mvp-specialist`): MVP Strategy & Refinement Specialist  
+**MVP Specialist** (`/mvp-specialist`): MVP Strategy & Refinement Specialist - ENHANCED WITH AZURE DEVOPS INTEGRATION
 - Define target conditions: Basic Version (core functionality demo with hardcoded data, minimal UI, no error handling) and MVP (validated product with real value)
 - Use hypothesis-driven development with build-measure-learn cycles
-- Create feature specifications with Must/Should/Could prioritization
+- Create feature specifications with Must/Should/Could prioritization aligned with sprint planning
+- **AZURE DEVOPS HANDOFF**: Structured sprint planning data with JSON format for automated Azure DevOps implementation
+- **MVP-TO-SPRINT MAPPING**: Timeline mapping (Basic Version → MVP → Post-MVP) with specific milestone dates and story point estimates
+- **SEAMLESS INTEGRATION**: Direct handoff to azure-devops-agent for complete sprint planning automation
 - Basic Version success metric: Can users complete the primary task once, under ideal conditions?
-- Output: `mvp-requirements.md` with prioritized features and validation criteria
+- Output: `mvp-requirements.md` with prioritized features, sprint timeline, and Azure DevOps-ready configuration data
+- ENHANCED: Now includes structured handoff protocols for automated Azure DevOps sprint planning
 - WORKFLOW EVALUATION: Evaluate if additions or changes to MVP strategy workflows should be added to AI-Roles.md
 
 **Architect** (`/architect`): Solution Architect (Archie) specializing in planning tools
@@ -231,12 +235,15 @@ The typical development workflow follows this sequence:
 
 ### DevOps & Infrastructure Agents
 
-**Azure DevOps Agent** (`/azure-devops-agent`): Azure DevOps AI Agent
-- Create, manage, and execute Azure DevOps pipelines through programmatic interfaces
-- Analyze requirements to design optimal CI/CD workflows with measurable success rates
-- Configure build/test/deployment tasks with performance benchmarks and failure analysis
-- Implement monitoring, security gates, and Infrastructure as Code integration
-- Output: `azure-pipelines.yml`, `pipeline-config.md`, monitoring dashboards
+**Azure DevOps Agent** (`/azure-devops-agent`): Enhanced Azure DevOps AI Agent - BREAKTHROUGH ENHANCED 🚀
+- **MVP-INTEGRATED SPRINT PLANNING**: Complete programmatic sprint creation with MVP phase alignment (Basic Version → MVP → Post-MVP)
+- **ADVANCED WORK ITEM AUTOMATION**: Epic→Feature→User Story→Task hierarchy creation with proper parent-child relationships
+- **CRITICAL TECHNICAL SOLUTION**: GUID-based Azure CLI team configuration (resolves "ERROR: Id" and "TF401347" issues)
+- **COMPLETE PROJECT MANAGEMENT**: Team configuration, iteration setup, work item assignment with 100% automation success
+- **CI/CD PIPELINE INTEGRATION**: Design optimal workflows with MVP deployment gates and monitoring
+- **SEAMLESS MVP HANDOFF**: Structured integration with MVP-specialist for automated sprint planning
+- Output: Complete Azure DevOps project configuration, sprint timeline, work item hierarchy, CI/CD pipelines
+- BREAKTHROUGH: Discovered GUID-based Azure CLI methodology enabling full automation of Azure DevOps sprint planning
 - WORKFLOW EVALUATION: Evaluate if additions or changes to Azure DevOps workflows should be added to AI-Roles.md
 
 ### Role Usage Summary
@@ -300,11 +307,12 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 
 | Name | Summary | Version | Last Update |
 |------|---------|---------|-------------|
-| CLAUDE.md | Guidance file for Claude Code with structured interaction pattern, role display, and development practices | 1.2 | 2025-07-26 |
+| CLAUDE.md | Guidance file for Claude Code with structured interaction pattern, role display, and development practices (Enhanced with Azure DevOps breakthrough) | 1.3 | 2025-08-17 |
 | AI-Roles.md | Complete role-based development system with all 10 roles and their workflows (Enhanced TDD role with Puppeteer) | 1.1 | 2025-07-30 |
 | README.md | Project overview with detailed setup instructions and troubleshooting guide | 1.1 | 2025-07-26 |
 | core-principles.md | Evidence-based development principles and MVP philosophy | 1.0 | 2025-07-22 |
 | CHANGELOG.md | Version history and release notes for the project | 0.2.0 | 2025-07-26 |
-
+| azure-devops-complete-solution.md | Complete Azure DevOps sprint planning automation solution with GUID breakthrough discovery and MVP integration | 1.0 | 2025-08-17 |
+| role-enhancement-summary.md | Comprehensive enhancement summary of Azure DevOps Agent and MVP Specialist roles with technical breakthrough solutions | 1.0 | 2025-08-17 |
 | role-template.md | Standardized template for all roles with interaction patterns | 1.0 | 2025-08-14 |
 | VERSION | Current version number of the project | 0.2.0 | 2025-07-26 |
