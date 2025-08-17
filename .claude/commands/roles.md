@@ -77,6 +77,23 @@ List all available development roles with descriptions and usage information.
 - Implements monitoring, security gates, and Infrastructure as Code integration
 - **Output**: `azure-pipelines.yml`, `pipeline-config.md`, monitoring dashboards
 
+## Workflow Support Agents
+
+**`/azure-devops-planner`** - Azure DevOps Planner
+- Central orchestrator for ALL project tracking with complete traceability
+- Manages Epic → Feature → User Story/PBI → Task → Bug hierarchy
+- Enforces ultra-strict validation with human bypass approval only
+- Stores ALL project artifacts directly in Azure DevOps
+- Provides standardized interface for multi-platform support
+- **Output**: Work items with complete evidence trail and traceability links
+
+**`/agent-generator`** - Agent Generator
+- Creates new AI agents that strictly follow role-template.md structure and core principles
+- Ensures evidence-based operation with measurable verification and "show me the data" protocol
+- Uses hierarchical questioning to gather complete agent specifications
+- Validates template compliance and integration with existing workflow
+- **Output**: Complete `{agent-name}-role.md` file with testing checklist and integration instructions
+
 ## Agent Chain Recommendations
 
 - **Just an idea**: `/project-initiator` → `/requirements-collector` → `/mvp-specialist` → `/architect` → `/planner`
