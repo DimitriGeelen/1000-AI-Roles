@@ -1,6 +1,6 @@
 // List all PBIs (Product Backlog Items) from Azure DevOps
 const axios = require('axios');
-require('dotenv').config();
+require('dotenv').config({ path: '../.env' });
 
 async function listPBIs() {
     try {

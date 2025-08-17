@@ -19,28 +19,59 @@ class AzureDevOpsPlanner {
         this.apiVersion = '7.1-preview.3';
     }
 
-    // Main command processor
+    // Main command processor with mandatory validation
     async processCommand(command) {
         console.log(`📥 Processing command: ${command.command} from ${command.agent}`);
         
         try {
+            let result;
             switch (command.command) {
                 case 'CREATE_WORK_ITEM':
-                    return await this.createWorkItem(command);
+                    result = await this.createWorkItem(command);
+                    break;
                 case 'UPDATE_STATUS':
-                    return await this.updateStatus(command);
+                    result = await this.updateStatus(command);
+                    break;
                 case 'ATTACH_EVIDENCE':
-                    return await this.attachEvidence(command);
+                    result = await this.attachEvidence(command);
+                    break;
                 case 'LINK_ITEMS':
-                    return await this.linkItems(command);
+                    result = await this.linkItems(command);
+                    break;
                 case 'REPORT_METRICS':
-                    return await this.reportMetrics(command);
+                    result = await this.reportMetrics(command);
+                    break;
                 case 'REQUEST_BYPASS':
-                    return await this.requestBypass(command);
+                    result = await this.requestBypass(command);
+                    break;
                 default:
                     throw new Error(`Unknown command: ${command.command}`);
             }
+            
+            // MANDATORY VALIDATION: Verify result for critical operations
+            if (result && result.work_item_id && ['CREATE_WORK_ITEM', 'UPDATE_STATUS'].includes(command.command)) {
+                console.log(`🔍 MANDATORY VALIDATION: Verifying work item ${result.work_item_id} exists...`);
+                const verified = await this.verifyWorkItemExists(result.work_item_id);
+                if (!verified) {
+                    console.error(`❌ VALIDATION FAILED: Work item ${result.work_item_id} does not exist in Azure DevOps!`);
+                    return {
+                        success: false,
+                        message: `VALIDATION FAILED: Work item ${result.work_item_id} not found in Azure DevOps`,
+                        validation_error: true,
+                        errors: ['Work item creation/update appeared successful but verification failed'],
+                        bypass_required: true
+                    };
+                }
+                console.log(`✅ VALIDATION PASSED: Work item ${result.work_item_id} confirmed in Azure DevOps`);
+                result.verified = true;
+            } else if (result && result.work_item_id) {
+                // Set verified false for operations that weren't validated
+                result.verified = false;
+            }
+            
+            return result;
         } catch (error) {
+            console.error(`❌ Command processing failed: ${error.message}`);
             return this.errorResponse(error.message);
         }
     }
@@ -478,6 +509,25 @@ class AzureDevOpsPlanner {
         };
         
         return linkMap[linkType] || 'System.LinkTypes.Related';
+    }
+
+    // MANDATORY VALIDATION: Verify work item exists in Azure DevOps
+    async verifyWorkItemExists(workItemId) {
+        const url = `${this.baseUrl}/_apis/wit/workitems/${workItemId}?api-version=${this.apiVersion}`;
+        
+        try {
+            const response = await axios.get(url, {
+                headers: {
+                    'Authorization': `Basic ${this.auth}`
+                },
+                timeout: 10000
+            });
+            
+            return response.status === 200 && response.data && response.data.id == workItemId;
+        } catch (error) {
+            console.error(`🚨 Verification failed for work item ${workItemId}:`, error.message);
+            return false;
+        }
     }
 
     // Helper: Error response format

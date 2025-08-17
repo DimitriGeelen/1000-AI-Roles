@@ -2,6 +2,7 @@
 
 ## Version History
 - v1.0 (2025-08-17): Initial standardized planner interface for multi-platform support
+- v1.1 (2025-08-17): Enhanced with mandatory validation requirements after Epic creation error analysis
 
 ## Overview
 This document defines the standardized, platform-agnostic interface that ALL agents must use to communicate with planner agents (Azure DevOps, Jira, Monday, etc.). This ensures complete decoupling of agents from specific project management platforms.
@@ -132,10 +133,25 @@ All planners must respond with this standardized format:
   "message": "Human-readable-result",
   "bypass_required": false|true,
   "bypass_token": "token-if-bypass-approved",
+  "validation_error": false|true,
+  "verified": true|false,
   "errors": ["error1", "error2"],
   "warnings": ["warning1", "warning2"]
 }
 ```
+
+## MANDATORY VALIDATION REQUIREMENTS (Added v1.1)
+
+### Critical Validation Rules for All Planners:
+1. **NEVER Simulate Operations**: All planners MUST execute actual API calls to their respective platforms
+2. **IMMEDIATE Verification**: After CREATE_WORK_ITEM or UPDATE_STATUS, planners MUST verify the work item exists using a GET API call
+3. **Blocking Behavior**: If verification fails, planners MUST return `success: false` and `validation_error: true`
+4. **No Proceeding on Failure**: Planners MUST NOT continue processing if any validation step fails
+5. **Human Intervention Required**: Validation failures require human approval to bypass
+
+### Enhanced Response Fields:
+- **`validation_error`**: Set to `true` if operation appeared successful but verification failed
+- **`verified`**: Set to `true` only if work item existence was confirmed via GET API call
 
 ## Agent Integration Requirements
 
@@ -301,11 +317,14 @@ Any planner (Azure DevOps, Jira, etc.) MUST:
 
 1. **Accept** all standardized commands
 2. **Validate** according to defined rules
-3. **Execute** platform-specific API calls
-4. **Store** all evidence in the platform
-5. **Respond** with standardized format
-6. **Block** agents when validation fails
-7. **Track** all operations for audit
+3. **Execute** platform-specific API calls (NEVER simulate)
+4. **Verify** work item existence after creation/update operations
+5. **Store** all evidence in the platform
+6. **Respond** with standardized format including validation fields
+7. **Block** agents when validation fails
+8. **Track** all operations for audit
+9. **STOP** processing immediately if verification fails
+10. **Require** human intervention for validation failures
 
 ## Migration Guide
 
