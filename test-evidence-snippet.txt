@@ -1,0 +1,21 @@
+
+> azure-devops-agent@0.1.0 test
+> jest --coverage --verbose
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.834Z",
+      "code": "AUTH_INVALID",
+      "category": "AUTH",
+      "severity": "HIGH",
+...
+  ErrorRecovery.ts        |   86.04 |    71.42 |    87.5 |   86.74 | 67,72-73,93-98,107,209,224,279                 
+  UserMessageGenerator.ts |   71.18 |     61.7 |     100 |   71.18 | 54-57,79,88-91,128,140,153-156,161,171,186-193 
+ workitem                 |   86.72 |    58.82 |   93.75 |   86.48 |                                                
+  WorkItemService.ts      |   86.72 |    58.82 |   93.75 |   86.48 | 83-84,170-171,197-201,325,338,348,405-417,453  
+--------------------------|---------|----------|---------|---------|------------------------------------------------
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       10 failed, 34 passed, 44 total
+Snapshots:   0 total
+Time:        3.619 s
+Ran all test suites.

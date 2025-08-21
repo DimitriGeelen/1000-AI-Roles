@@ -1,0 +1,567 @@
+
+> azure-devops-agent@0.1.0 test
+> jest --coverage --verbose
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.834Z",
+      "code": "AUTH_INVALID",
+      "category": "AUTH",
+      "severity": "HIGH",
+      "operation": "authenticate",
+      "recoverable": true,
+      "message": "Invalid credentials"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:33:39)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.875Z",
+      "code": "NETWORK_CONNECTION_REFUSED",
+      "category": "NETWORK",
+      "severity": "HIGH",
+      "operation": "api_call",
+      "recoverable": true,
+      "message": "ECONNREFUSED"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:38:42)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.877Z",
+      "code": "VALIDATION_REQUIRED_FIELD",
+      "category": "VALIDATION",
+      "severity": "MEDIUM",
+      "operation": "validate_input",
+      "recoverable": true,
+      "message": "Missing required field"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:43:45)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.878Z",
+      "code": "API_INTERNAL_ERROR",
+      "category": "API",
+      "severity": "HIGH",
+      "operation": "api_call",
+      "statusCode": 500,
+      "recoverable": true,
+      "message": "Server returned 500"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:48:38)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.879Z",
+      "code": "RATE_LIMITED",
+      "category": "RATE_LIMIT",
+      "severity": "MEDIUM",
+      "operation": "api_call",
+      "statusCode": 429,
+      "recoverable": true,
+      "message": "Rate limit exceeded"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:54:44)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.882Z",
+      "code": "NETWORK_TIMEOUT",
+      "category": "NETWORK",
+      "severity": "HIGH",
+      "operation": "api_call",
+      "recoverable": true,
+      "message": "Network timeout"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:89:36)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.883Z",
+      "code": "NETWORK_ERROR",
+      "category": "NETWORK",
+      "severity": "HIGH",
+      "operation": "api_call",
+      "recoverable": true,
+      "message": "Connection refused"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:90:36)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.889Z",
+      "code": "AUTH_SECURITY_VIOLATION",
+      "category": "AUTH",
+      "severity": "CRITICAL",
+      "operation": "security_check",
+      "recoverable": true,
+      "message": "Authentication bypass attempt"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:106:43)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.890Z",
+      "code": "CRITICAL_DATA_CORRUPTION",
+      "category": "UNKNOWN",
+      "severity": "CRITICAL",
+      "operation": "data_operation",
+      "recoverable": false,
+      "message": "Database corruption detected"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:111:39)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.892Z",
+      "code": "CRITICAL_MEMORY",
+      "category": "UNKNOWN",
+      "severity": "CRITICAL",
+      "operation": "system_operation",
+      "recoverable": false,
+      "message": "Out of memory"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at ErrorHandler.logError [as categorizeError] (src/errors/ErrorHandler.ts:78:17)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:116:41)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.898Z",
+      "code": "NETWORK_TIMEOUT",
+      "category": "NETWORK",
+      "severity": "MEDIUM",
+      "operation": "api_call",
+      "recoverable": true,
+      "message": "Request timeout"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at tests/evidence/error-handling.evidence.test.ts:357:43
+          at Array.forEach (<anonymous>)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:357:14)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.899Z",
+      "code": "NETWORK_TIMEOUT",
+      "category": "NETWORK",
+      "severity": "MEDIUM",
+      "operation": "api_call",
+      "recoverable": true,
+      "message": "Request timeout"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at tests/evidence/error-handling.evidence.test.ts:357:43
+          at Array.forEach (<anonymous>)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:357:14)
+
+  console.error
+    [ERROR] {
+      "timestamp": "2025-08-21T07:49:38.900Z",
+      "code": "API_SERVER_ERROR",
+      "category": "API",
+      "severity": "HIGH",
+      "operation": "api_call",
+      "statusCode": 500,
+      "recoverable": true,
+      "message": "Server error"
+    }
+
+      36 |     };
+      37 |
+    > 38 |     console.error(`[ERROR] ${JSON.stringify(logEntry, null, 2)}`);
+         |             ^
+      39 |
+      40 |     // Update statistics
+      41 |     this.updateStatistics(error);
+
+      at ErrorLogger.error [as logError] (src/errors/ErrorLogger.ts:38:13)
+      at tests/evidence/error-handling.evidence.test.ts:357:43
+          at Array.forEach (<anonymous>)
+      at Object.<anonymous> (tests/evidence/error-handling.evidence.test.ts:357:14)
+
+FAIL tests/evidence/api-client.evidence.test.ts
+  API Client - Evidence Tests
+    T005 Evidence: HTTP Client with Azure DevOps Integration
+      ✕ EVIDENCE: HTTP client makes authenticated requests to Azure DevOps API (6 ms)
+      ✕ EVIDENCE: Base URL and headers are correctly configured for Azure DevOps
+    T006 Evidence: Rate Limiting with Token Bucket Algorithm
+      ✕ EVIDENCE: Rate limiting prevents API abuse and respects limits
+      ✕ EVIDENCE: Rate limit information is tracked and exposed
+    T007 Evidence: Error Handling and Retry Logic
+      ✕ EVIDENCE: Network errors trigger retry with exponential backoff
+      ✕ EVIDENCE: HTTP 429 (rate limit) responses are handled gracefully
+      ✕ EVIDENCE: Server errors (5xx) are retried but client errors (4xx) are not (1 ms)
+    T008 Evidence: Connectivity Monitoring
+      ✕ EVIDENCE: Connection health is monitored and reported
+      ✕ EVIDENCE: Performance metrics are collected and retrievable (1 ms)
+      ✕ EVIDENCE: Circuit breaker prevents cascading failures
+
+  ● API Client - Evidence Tests › T005 Evidence: HTTP Client with Azure DevOps Integration › EVIDENCE: HTTP client makes authenticated requests to Azure DevOps API
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T005 Evidence: HTTP Client with Azure DevOps Integration › EVIDENCE: Base URL and headers are correctly configured for Azure DevOps
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T006 Evidence: Rate Limiting with Token Bucket Algorithm › EVIDENCE: Rate limiting prevents API abuse and respects limits
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T006 Evidence: Rate Limiting with Token Bucket Algorithm › EVIDENCE: Rate limit information is tracked and exposed
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T007 Evidence: Error Handling and Retry Logic › EVIDENCE: Network errors trigger retry with exponential backoff
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T007 Evidence: Error Handling and Retry Logic › EVIDENCE: HTTP 429 (rate limit) responses are handled gracefully
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T007 Evidence: Error Handling and Retry Logic › EVIDENCE: Server errors (5xx) are retried but client errors (4xx) are not
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T008 Evidence: Connectivity Monitoring › EVIDENCE: Connection health is monitored and reported
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T008 Evidence: Connectivity Monitoring › EVIDENCE: Performance metrics are collected and retrievable
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+  ● API Client - Evidence Tests › T008 Evidence: Connectivity Monitoring › EVIDENCE: Circuit breaker prevents cascading failures
+
+    TypeError: Cannot read properties of undefined (reading 'interceptors')
+
+      188 |   private setupInterceptors(): void {
+      189 |     // Request interceptor for authentication
+    > 190 |     this.httpClient.interceptors.request.use(
+          |                     ^
+      191 |       (config) => {
+      192 |         if (this.authService.isConfigured()) {
+      193 |           const authConfig = this.authService.getConfiguration();
+
+      at ApiClient.interceptors [as setupInterceptors] (src/client/ApiClient.ts:190:21)
+      at new setupInterceptors (src/client/ApiClient.ts:72:10)
+      at Object.<anonymous> (tests/evidence/api-client.evidence.test.ts:53:17)
+
+PASS tests/evidence/work-item.evidence.test.ts
+  Work Item Operations - Evidence Tests
+    T009 Evidence: Create Work Item Functionality
+      ✓ EVIDENCE: New work items are created with all required fields and proper validation (15 ms)
+      ✓ EVIDENCE: Required field validation prevents invalid work item creation (3 ms)
+      ✓ EVIDENCE: Work item types are validated against project configuration (1 ms)
+    T010 Evidence: Read Work Item Operations
+      ✓ EVIDENCE: Work items are retrieved with complete field data and relationships (2 ms)
+      ✓ EVIDENCE: Non-existent work items return appropriate not found response (1 ms)
+      ✓ EVIDENCE: Bulk work item retrieval handles large datasets efficiently (1 ms)
+    T011 Evidence: Update Work Item Logic
+      ✓ EVIDENCE: Work item fields are updated with proper change tracking and validation (2 ms)
+      ✓ EVIDENCE: Field value validation prevents invalid updates (1 ms)
+      ✓ EVIDENCE: Concurrent update conflicts are detected and handled (2 ms)
+    T012 Evidence: CRUD Testing Validation
+      ✓ EVIDENCE: Complete CRUD workflow maintains data consistency and reliability (2 ms)
+      ✓ EVIDENCE: Error scenarios are handled consistently across all CRUD operations (3 ms)
+      ✓ EVIDENCE: Performance metrics are collected for all CRUD operations (2 ms)
+
+PASS tests/evidence/error-handling.evidence.test.ts
+  Error Handling Foundation - Evidence Tests
+    T013 Evidence: Error Categorization System
+      ✓ EVIDENCE: Errors are properly categorized with appropriate severity levels (54 ms)
+      ✓ EVIDENCE: Error codes are generated consistently for the same error types (7 ms)
+      ✓ EVIDENCE: Critical errors are properly flagged for immediate attention (4 ms)
+    T014 Evidence: User-Friendly Message Generation
+      ✓ EVIDENCE: Technical errors are converted to user-friendly messages (1 ms)
+      ✓ EVIDENCE: Error messages include helpful recovery suggestions (1 ms)
+      ✓ EVIDENCE: Error messages are contextually appropriate for different user types
+    T015 Evidence: Logging Infrastructure
+      ✓ EVIDENCE: Error logs contain all necessary debugging information (2 ms)
+      ✓ EVIDENCE: Sensitive information is never logged (1 ms)
+      ✓ EVIDENCE: Error patterns and trends are tracked for analysis (3 ms)
+    T016 Evidence: Error Recovery Mechanisms
+      ✓ EVIDENCE: Automatic retry logic works for transient failures (302 ms)
+      ✓ EVIDENCE: Circuit breaker prevents cascading failures (1 ms)
+      ✓ EVIDENCE: Graceful degradation maintains partial functionality (1 ms)
+      ✓ EVIDENCE: Recovery state is persisted across application restarts
+      ✓ EVIDENCE: Error recovery metrics are collected for monitoring (201 ms)
+
+PASS tests/evidence/auth.evidence.test.ts
+  Authentication Service - Evidence Tests
+    T001 Evidence: PAT Authentication Setup
+      ✓ EVIDENCE: Valid PAT configuration is accepted and stored securely (8 ms)
+      ✓ EVIDENCE: Invalid PAT configuration is rejected with clear error (1 ms)
+    T002 Evidence: Configuration Manager
+      ✓ EVIDENCE: Environment variables override default configuration (1 ms)
+      ✓ EVIDENCE: Configuration validation catches missing required fields
+    T003 Evidence: Auth Validation
+      ✓ EVIDENCE: Authentication validates successfully against Azure DevOps (844 ms)
+      ✓ EVIDENCE: Authentication validation fails gracefully with invalid credentials (208 ms)
+    T004 Evidence: Security Testing
+      ✓ EVIDENCE: PAT tokens are never logged or exposed in error messages (795 ms)
+      ✓ EVIDENCE: Authentication state is properly isolated between instances (1 ms)
+
+--------------------------|---------|----------|---------|---------|------------------------------------------------
+File                      | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                              
+--------------------------|---------|----------|---------|---------|------------------------------------------------
+All files                 |   64.94 |    58.36 |   67.42 |   65.48 |                                                
+ auth                     |   71.69 |    55.55 |      80 |   71.15 |                                                
+  AuthService.ts          |   71.69 |    55.55 |      80 |   71.15 | 64-79,89,100-113,155-180,204-211               
+ client                   |   17.85 |     5.76 |   12.82 |   17.96 |                                                
+  ApiClient.ts            |   17.02 |     3.03 |    9.09 |    17.2 | 76-184,192-359                                 
+  CircuitBreaker.ts       |   26.31 |    16.66 |   22.22 |   26.31 | 27-91                                          
+  RateLimiter.ts          |   11.11 |        0 |    12.5 |   11.11 | 26-92                                          
+ config                   |    77.5 |    84.61 |      75 |   78.94 |                                                
+  ConfigurationManager.ts |   75.67 |    84.61 |      75 |   77.14 | 22-25,49,54,81,85,104                          
+  default.ts              |     100 |      100 |     100 |     100 |                                                
+ errors                   |   80.13 |    71.01 |   93.22 |   82.56 |                                                
+  ErrorHandler.ts         |   77.47 |    73.91 |     100 |   83.87 | 155-157,165-167,181-182,189-191,193-195,204    
+  ErrorLogger.ts          |   86.95 |      100 |   91.66 |   86.95 | 76-80,118                                      
+  ErrorRecovery.ts        |   86.04 |    71.42 |    87.5 |   86.74 | 67,72-73,93-98,107,209,224,279                 
+  UserMessageGenerator.ts |   71.18 |     61.7 |     100 |   71.18 | 54-57,79,88-91,128,140,153-156,161,171,186-193 
+ workitem                 |   86.72 |    58.82 |   93.75 |   86.48 |                                                
+  WorkItemService.ts      |   86.72 |    58.82 |   93.75 |   86.48 | 83-84,170-171,197-201,325,338,348,405-417,453  
+--------------------------|---------|----------|---------|---------|------------------------------------------------
+Test Suites: 1 failed, 3 passed, 4 total
+Tests:       10 failed, 34 passed, 44 total
+Snapshots:   0 total
+Time:        3.619 s
+Ran all test suites.

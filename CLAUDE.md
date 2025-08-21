@@ -44,6 +44,28 @@ The goal is to build only what's been proven necessary, keeping development focu
 - 🎭 **Current Role**: [Role Name] - Brief role description
 - ➡️ **Next Suggested Role**: [Next Role] - Why this role follows naturally
 
+## 🚨 CRITICAL: Context Validation Protocol
+
+**MANDATORY FOR ALL AGENTS**: Before any technical work:
+
+1. **Read and understand**: What does the work item actually ask for?
+2. **State back**: "I understand this is about [summarize in plain English]"
+3. **Propose approach**: "I plan to [specific actions with exact component/file names]"
+4. **Get confirmation**: Wait for human "go" or "correct your understanding"
+5. **If human says understanding is wrong - STOP and re-read work item**
+
+### Ultra-Specific Requirements
+- **Component Names**: Always specify exact component names (EventCreationWizard, not "event component")
+- **File Names**: Always specify exact files to be created/tested
+- **Technology Alignment**: Confirm UI vs API vs Database alignment
+- **Test Target Matching**: Ensure test files match the component being tested
+
+### Anti-Hallucination Enforcement
+❌ **FORBIDDEN**: Assuming what needs to be built/tested
+❌ **FORBIDDEN**: Generic file names (work-item.test.ts for UI components)
+❌ **FORBIDDEN**: Wrong technology tests (API tests for UI components)
+✅ **REQUIRED**: Explicit confirmation of understanding before proceeding
+
 ## Structured Interaction Pattern
 
 **IMPORTANT**: When any role needs to gather information through questions, follow this structured approach:
@@ -316,3 +338,5 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 | role-enhancement-summary.md | Comprehensive enhancement summary of Azure DevOps Agent and MVP Specialist roles with technical breakthrough solutions | 1.0 | 2025-08-17 |
 | role-template.md | Standardized template for all roles with interaction patterns | 1.0 | 2025-08-14 |
 | VERSION | Current version number of the project | 0.2.0 | 2025-07-26 |
+
+- use git-mate agent for git activities

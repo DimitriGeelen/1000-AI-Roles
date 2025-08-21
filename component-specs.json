@@ -1,0 +1,43 @@
+{
+  "components": [
+    {
+      "name": "WorkItemService",
+      "type": "API",
+      "file": "src/workitem/WorkItemService.ts",
+      "testFile": "tests/evidence/work-item.evidence.test.ts",
+      "testStrategy": "Jest API tests",
+      "description": "Handles Azure DevOps work item CRUD operations"
+    },
+    {
+      "name": "AuthService",
+      "type": "API",
+      "file": "src/auth/AuthService.ts",
+      "testFile": "tests/evidence/auth.evidence.test.ts",
+      "testStrategy": "Jest authentication tests",
+      "description": "Manages Azure DevOps authentication with PAT tokens"
+    },
+    {
+      "name": "ApiClient",
+      "type": "API",
+      "file": "src/client/ApiClient.ts",
+      "testFile": "tests/evidence/api-client.evidence.test.ts",
+      "testStrategy": "Jest API client tests",
+      "description": "REST API client for Azure DevOps communication"
+    },
+    {
+      "name": "ConfigurationManager",
+      "type": "API",
+      "file": "src/config/ConfigurationManager.ts",
+      "testFile": "tests/evidence/configuration.evidence.test.ts",
+      "testStrategy": "Jest configuration tests",
+      "description": "Manages application configuration and environment variables"
+    }
+  ],
+  "technologyStack": {
+    "runtime": "Node.js",
+    "language": "TypeScript",
+    "testFramework": "Jest",
+    "apiClient": "Azure DevOps REST API v7.2",
+    "authentication": "Personal Access Token (PAT)"
+  }
+}

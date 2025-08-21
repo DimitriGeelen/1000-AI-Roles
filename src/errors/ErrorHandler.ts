@@ -101,8 +101,7 @@ export class ErrorHandler {
       message.includes('timeout') ||
       message.includes('connection') ||
       message.includes('dns') ||
-      message.includes('socket') ||
-      !context.statusCode // No status code usually means network issue
+      message.includes('socket')
     );
   }
 

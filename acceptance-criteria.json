@@ -1,0 +1,54 @@
+{
+  "criteria": [
+    {
+      "id": "AC001",
+      "story": "US001",
+      "description": "Azure DevOps Authentication Setup",
+      "testable": true,
+      "measurable": {
+        "successCondition": "Valid PAT authenticates successfully",
+        "errorCondition": "Invalid PAT returns 401 Unauthorized",
+        "performance": "Authentication completes within 2 seconds"
+      }
+    },
+    {
+      "id": "AC002",
+      "story": "US002",
+      "description": "Work Item Context Awareness",
+      "testable": true,
+      "measurable": {
+        "successCondition": "System suggests relevant work item operations",
+        "errorCondition": "System handles missing context gracefully",
+        "performance": "Context detection within 500ms"
+      }
+    },
+    {
+      "id": "AC003",
+      "story": "US003",
+      "description": "Work Item Creation",
+      "testable": true,
+      "measurable": {
+        "successCondition": "Work item created with all required fields",
+        "errorCondition": "Missing fields return validation errors",
+        "performance": "Creation completes within 5 seconds"
+      }
+    },
+    {
+      "id": "AC004",
+      "story": "US004",
+      "description": "Work Item Updates",
+      "testable": true,
+      "measurable": {
+        "successCondition": "Work item fields update successfully",
+        "errorCondition": "Invalid updates return appropriate errors",
+        "performance": "Updates complete within 3 seconds"
+      }
+    }
+  ],
+  "performanceTargets": {
+    "apiResponseTime": "< 5 seconds",
+    "authenticationTime": "< 2 seconds",
+    "contextDetection": "< 500ms",
+    "errorRecovery": "< 1 second"
+  }
+}

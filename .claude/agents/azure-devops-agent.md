@@ -109,18 +109,33 @@ az boards work-item update --id 15 --iteration "ProjectName\\Sprint-Name"
 
 ### Work Item Creation Workflow
 
+**CRITICAL NOTE**: Azure CLI does NOT support `--parent-id` parameter. Use proper relationship commands instead.
+
 ```bash
-# Create Epic
+# Step 1: Create work items first
 az boards work-item create --type Epic --title "Epic Title" --area "ProjectName" --iteration "ProjectName\\Iteration"
 
-# Create Feature with parent linking
-az boards work-item create --type Feature --title "Feature Title" --parent-id 2 --area "ProjectName"
+# Step 2: Create child work items 
+az boards work-item create --type Feature --title "Feature Title" --area "ProjectName"
 
-# Create User Story with acceptance criteria
-az boards work-item create --type "User Story" --title "US001: Story Title" --parent-id 4 --description "Detailed description with acceptance criteria"
+# Step 3: Create User Story with acceptance criteria
+az boards work-item create --type "User Story" --title "US001: Story Title" --description "Detailed description with acceptance criteria"
 
-# Create Tasks with effort estimation
-az boards work-item create --type Task --title "Implement component X" --parent-id 15 --assigned-to "user@domain.com" --fields "Microsoft.VSTS.Scheduling.RemainingWork=8"
+# Step 4: Create Tasks with effort estimation
+az boards work-item create --type Task --title "Implement component X" --assigned-to "user@domain.com" --fields "Microsoft.VSTS.Scheduling.RemainingWork=8"
+
+# Step 5: ESTABLISH RELATIONSHIPS (CRITICAL)
+az boards work-item relation add --id CHILD_ID --relation-type parent --target-id PARENT_ID
+
+# Example: Link Task to User Story
+az boards work-item relation add --id 22 --relation-type parent --target-id 15
+```
+
+**PERMANENT WORKFLOW PATTERN**:
+```bash
+# 1. Create all work items first (without parent relationships)
+# 2. Use az boards work-item relation add to establish hierarchy
+# 3. Verify relationships with az boards work-item show --id ID --query "relations"
 ```
 
 ### Sprint Assignment Pattern
@@ -332,11 +347,54 @@ az boards iteration team add --id "GUID-HERE" --team "TeamName"
 az boards iteration team add --id "ITERATION-GUID" --team "TeamName"
 az boards work-item update --id 15 --iteration "ProjectName\\SprintName"
 
-# Issue: Work item creation fails with parent linking
-# Cause: Parent ID doesn't exist or wrong work item type hierarchy
-# Solution: Verify parent exists and use correct hierarchy (Epic->Feature->UserStory->Task)
-az boards work-item show --id PARENT-ID
-az boards work-item create --type "User Story" --parent-id PARENT-ID
+# Issue: Work item creation fails with --parent-id parameter
+# Cause: Azure CLI does NOT support --parent-id parameter
+# Solution: Create work items first, then establish relationships
+# ❌ WRONG: az boards work-item create --type Task --parent-id 15
+# ✅ CORRECT: 
+az boards work-item create --type Task --title "Task Title"
+az boards work-item relation add --id NEW_TASK_ID --relation-type parent --target-id 15
+
+# Issue: Parent relationships not showing
+# Cause: Using --fields "System.Parent=ID" doesn't establish true relationships
+# Solution: Use az boards work-item relation add command
+az boards work-item relation add --id CHILD_ID --relation-type parent --target-id PARENT_ID
+
+# Issue: "Field 'State' contains value 'Done' that is not in the list of supported values"
+# Cause: "Done" is not a valid state for Task work items
+# Solution: Use proper state transitions: New → Active → Closed
+# ❌ WRONG: az boards work-item update --id 22 --state "Done" --fields "Microsoft.VSTS.Scheduling.RemainingWork=0"
+# ✅ CORRECT 3-step process:
+az boards work-item update --id 22 --state "Active"
+az boards work-item update --id 22 --fields "Microsoft.VSTS.Scheduling.RemainingWork=0"
+az boards work-item update --id 22 --state "Closed"
+
+# Issue: "Rule Error for field Remaining Work. Error code: InvalidNotEmpty"
+# Cause: Attempting to set RemainingWork=0 and State=Closed simultaneously violates business rules
+# Solution: Set remaining work to zero BEFORE transitioning to Closed state
+
+# Issue: "ERROR: 'comment' is misspelled or not recognized by the system"
+# Cause: Azure CLI does NOT support az boards work-item comment add command
+# Solution: Use --discussion parameter with az boards work-item update
+# ❌ WRONG: az boards work-item comment add --id 15 --text "Comment text"
+# ✅ CORRECT: az boards work-item update --id 15 --discussion "Comment text"
+
+# PERMANENT SOLUTION: Comments via Discussion Parameter
+az boards work-item update --id WORK_ITEM_ID --discussion "Your comment text here"
+# This adds the comment to the work item's discussion/comment history
+# Supports markdown formatting and long text content
+
+# Issue: "ERROR: 'list' is misspelled or not recognized by the system"
+# Cause: Azure CLI uses 'query' not 'list' for WIQL queries
+# Solution: Use az boards query for WIQL operations
+# ❌ WRONG: az boards work-item list --wiql "SELECT [System.Id] FROM workitems"
+# ✅ CORRECT: az boards query --wiql "SELECT [System.Id] FROM workitems"
+
+# Issue: "jq: error (at <stdin>:4): Cannot index array with string"
+# Cause: Query structure differs when using --query with field selection vs direct access
+# Solution: Use proper jq syntax for field access
+# ❌ WRONG: az boards work-item show --id 27 --query "fields.['System.Title']" --output json | jq -r '.["System.Title"]'
+# ✅ CORRECT: az boards work-item show --id 27 --query "fields" --output json | jq -r '.["System.Title"]'
 ```
 
 ### Sprint Planning Automation
