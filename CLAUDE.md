@@ -308,3 +308,4 @@ This tracking should be maintained within this CLAUDE.md file or in a dedicated 
 
 | role-template.md | Standardized template for all roles with interaction patterns | 1.0 | 2025-08-14 |
 | VERSION | Current version number of the project | 0.2.0 | 2025-07-26 |
+| pseudo-code.md | Comprehensive logic specifications for role editor enhancement with 5 core modules | 1.0 | 2025-07-28 |

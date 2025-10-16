@@ -1,0 +1,30 @@
+{
+  "name": "1000-ai-roles",
+  "version": "1.0.0",
+  "description": "This project reflects my personal journey as someone who always wanted programming skills to build useful tools but never developed the necessary expertise. AI pair programming has finally made creating usable applications accessible without requiring extensive upfront skill development. However, working with AI LLMs is quirky and difficult because they can completely derail. I'm trying different methods of \"guiding,\" \"coaching,\" \"steering,\" and limiting the LLM. I've had some interesting experiments with RooCode and Cursor using AI roles. Recently I took another shot at it with Claude Code roles. I've packaged the work and put it on GitHub here. It is not quite where I want it to be yet, but I do see this as one of the viable methods for keeping the LLM on track and it's a nice start. Feel encouraged to use it and I welcome feedback here or you can look me up on LinkedIn: https://www.linkedin.com/in/dimitrigeelen/.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "serve": "python3 -m http.server 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimitriGeelen/1000-AI-Roles.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DimitriGeelen/1000-AI-Roles/issues"
+  },
+  "homepage": "https://github.com/DimitriGeelen/1000-AI-Roles#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.0.5",
+    "jest-puppeteer": "^11.0.0",
+    "puppeteer": "^24.15.0"
+  }
+}

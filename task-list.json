@@ -1,0 +1,402 @@
+{
+  "project": "Role Editor Enhancement",
+  "version": "1.1",
+  "created": "2025-07-28",
+  "lastUpdated": "2025-07-28",
+  "epics": [
+    {
+      "id": "E001",
+      "name": "Basic Role Editor",
+      "status": "pending",
+      "features": [
+        {
+          "id": "F001",
+          "name": "Role Parser Module",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T001",
+              "name": "Parse AI-Roles.md structure",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T002",
+              "name": "Extract role definitions",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T003",
+              "name": "Create role objects",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST001",
+              "name": "Test role parsing",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "TEST002",
+              "name": "Test malformed input",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        },
+        {
+          "id": "F002",
+          "name": "Simple Editor UI",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T004",
+              "name": "Create HTML structure",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T005",
+              "name": "Add role list view",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T006",
+              "name": "Add textarea editor",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T007",
+              "name": "Implement edit mode",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST003",
+              "name": "Test UI rendering",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "TEST004",
+              "name": "Test edit workflow",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        },
+        {
+          "id": "F003",
+          "name": "File Operations",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T008",
+              "name": "Read AI-Roles.md file",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T009",
+              "name": "Write changes to file",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T010",
+              "name": "Handle file errors",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST005",
+              "name": "Test file reading",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "TEST006",
+              "name": "Test file writing",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        }
+      ],
+      "documentation": [
+        {
+          "id": "DOC001",
+          "name": "Basic editor usage",
+          "status": "pending",
+          "updates": []
+        }
+      ]
+    },
+    {
+      "id": "E002",
+      "name": "MVP Role Editor",
+      "status": "pending",
+      "features": [
+        {
+          "id": "F004",
+          "name": "Role Validator Module",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T011",
+              "name": "Validate role format",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T012",
+              "name": "Check required fields",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T013",
+              "name": "Detect duplicate names",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T014",
+              "name": "Show validation errors",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST007",
+              "name": "Test validation rules",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "TEST008",
+              "name": "Test error display",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        },
+        {
+          "id": "F005",
+          "name": "Structured Field Editor",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T015",
+              "name": "Create field inputs",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T016",
+              "name": "Add role template",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T017",
+              "name": "Real-time validation",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T018",
+              "name": "Field help tooltips",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "refactors": [
+            {
+              "id": "R001",
+              "name": "Extract field components",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST009",
+              "name": "Test field editing",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "TEST010",
+              "name": "Test template creation",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        },
+        {
+          "id": "F006",
+          "name": "Safety Features",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T019",
+              "name": "Create file backup",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T020",
+              "name": "Add save confirmation",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T021",
+              "name": "Implement undo changes",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T022",
+              "name": "Add unsaved indicator",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST011",
+              "name": "Test backup creation",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "TEST012",
+              "name": "Test undo functionality",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        },
+        {
+          "id": "F007",
+          "name": "Monitoring Integration",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T023",
+              "name": "Add performance metrics",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T024",
+              "name": "Track edit operations",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T025",
+              "name": "Log validation errors",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T026",
+              "name": "Create usage reports",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST013",
+              "name": "Test metric collection",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        }
+      ],
+      "documentation": [
+        {
+          "id": "DOC002",
+          "name": "MVP features guide",
+          "status": "pending",
+          "updates": []
+        },
+        {
+          "id": "DOC003",
+          "name": "Validation rules doc",
+          "status": "pending",
+          "updates": []
+        }
+      ]
+    },
+    {
+      "id": "E003",
+      "name": "Integration Testing",
+      "status": "pending",
+      "features": [
+        {
+          "id": "F008",
+          "name": "End-to-End Testing",
+          "status": "pending",
+          "tasks": [
+            {
+              "id": "T027",
+              "name": "Test full workflow",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T028",
+              "name": "Test error scenarios",
+              "status": "pending",
+              "updates": []
+            },
+            {
+              "id": "T029",
+              "name": "Performance benchmarks",
+              "status": "pending",
+              "updates": []
+            }
+          ],
+          "tests": [
+            {
+              "id": "TEST014",
+              "name": "Integration test suite",
+              "status": "pending",
+              "updates": []
+            }
+          ]
+        }
+      ],
+      "bugs": []
+    }
+  ],
+  "statistics": {
+    "totalEpics": 3,
+    "totalFeatures": 8,
+    "totalTasks": 29,
+    "totalTests": 14,
+    "totalRefactors": 1,
+    "totalDocumentation": 3,
+    "totalBugs": 0,
+    "completedTasks": 0,
+    "inProgressTasks": 0,
+    "pendingTasks": 29
+  }
+}
